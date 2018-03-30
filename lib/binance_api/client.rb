@@ -39,7 +39,7 @@ module BinanceAPI
     def historical_trades(symbol, limit: 500, from_id: nil)
       params = {symbol: symbol, limit: limit}
       params = params.merge(fromId: from_id) unless from_id.nil?
-      response = RestClient.get "#{BASE_URL}/api/v1/historicalTrades", params: params, 'X-MBX-APIKEY' => ''
+      response = RestClient.get "#{BASE_URL}/api/v1/historicalTrades", params: params, 'X-MBX-APIKEY' => api_key
       json = JSON.parse(response.body, symbolize_names: true)
       BinanceAPI::Result.new(json, response.code == 200)
     end
@@ -88,5 +88,19 @@ module BinanceAPI
       BinanceAPI::Result.new(json, response.code == 200)
     end
 
+
+    protected
+
+    def config
+      @config ||= BinanceAPI.load_config
+    end
+
+    def api_key
+      config['API_KEY'].freeze
+    end
+
+    def api_secret
+      config['API_SECRET'].freeze
+    end
   end
 end
