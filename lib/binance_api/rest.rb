@@ -35,7 +35,11 @@ module BinanceAPI
     def historical_trades(symbol, limit: 500, from_id: nil)
       params = { symbol: symbol, limit: limit }
       params = params.merge(fromId: from_id) unless from_id.nil?
-      response = safe { RestClient.get "#{BASE_URL}/api/v1/historicalTrades", params: params, 'X-MBX-APIKEY' => api_key }
+      response = safe do
+        RestClient.get "#{BASE_URL}/api/v1/historicalTrades",
+                       params: params,
+                       'X-MBX-APIKEY' => api_key
+      end
       build_result response
     end
 
@@ -109,7 +113,9 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.post "#{BASE_URL}/api/v3/order", params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
+        RestClient.post "#{BASE_URL}/api/v3/order",
+                        params_with_signature(params, api_secret),
+                        'X-MBX-APIKEY' => api_key
       end
 
       build_result response
@@ -135,7 +141,9 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.post "#{BASE_URL}/api/v3/order/test", params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
+        RestClient.post "#{BASE_URL}/api/v3/order/test",
+                        params_with_signature(params, api_secret),
+                        'X-MBX-APIKEY' => api_key
       end
 
       build_result response
@@ -154,7 +162,9 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/order", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/order",
+                       params: params_with_signature(params, api_secret),
+                       'X-MBX-APIKEY' => api_key
       end
 
       build_result response
@@ -174,7 +184,9 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.delete "#{BASE_URL}/api/v3/order", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
+        RestClient.delete "#{BASE_URL}/api/v3/order",
+                          params: params_with_signature(params, api_secret),
+                          'X-MBX-APIKEY' => api_key
       end
 
       build_result response
@@ -191,7 +203,9 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/openOrders", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/openOrders",
+                       params: params_with_signature(params, api_secret),
+                       'X-MBX-APIKEY' => api_key
       end
 
       build_result response
@@ -211,7 +225,9 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/allOrders", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/allOrders",
+                       params: params_with_signature(params, api_secret),
+                       'X-MBX-APIKEY' => api_key
       end
 
       build_result response
@@ -228,7 +244,9 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/account", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/account",
+                       params: params_with_signature(params, api_secret),
+                       'X-MBX-APIKEY' => api_key
       end
 
       build_result response
@@ -247,24 +265,37 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/myTrades", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/myTrades",
+                       params: params_with_signature(params, api_secret),
+                       'X-MBX-APIKEY' => api_key
       end
 
       build_result response
     end
 
     def start_user_data_stream
-      response = safe { RestClient.post "#{BASE_URL}/api/v1/userDataStream", {}, 'X-MBX-APIKEY' => api_key }
+      response = safe do
+        RestClient.post "#{BASE_URL}/api/v1/userDataStream",
+                        {},
+                        'X-MBX-APIKEY' => api_key
+      end
       build_result response
     end
 
     def keep_alive_user_data_stream(listen_key)
-      response = safe { RestClient.put "#{BASE_URL}/api/v1/userDataStream", { listenKey: listen_key }, 'X-MBX-APIKEY' => api_key }
+      response = safe do
+        RestClient.put "#{BASE_URL}/api/v1/userDataStream",
+                       {listenKey: listen_key},
+                       'X-MBX-APIKEY' => api_key
+      end
       build_result response
     end
 
     def close_user_data_stream(listen_key)
-      response = safe { RestClient.delete "#{BASE_URL}/api/v1/userDataStream", params: { listenKey: listen_key }, 'X-MBX-APIKEY' => api_key }
+      response = safe do
+        RestClient.delete "#{BASE_URL}/api/v1/userDataStream",
+                          params: {listenKey: listen_key},
+                          'X-MBX-APIKEY' => api_key
       build_result response
       end
     end
