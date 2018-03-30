@@ -1,15 +1,13 @@
 require 'binance_api/version'
-require 'binance_api/client'
+require 'binance_api/rest'
 require 'binance_api/stream'
 require 'yaml'
 
 module BinanceAPI
   class << self
-    def new
-      @client = BinanceAPI::Client.new
+    def rest
+      @rest ||= BinanceAPI::REST.new
     end
-
-    attr_reader :client
 
     def load_config
       YAML.load_file(File.join(BinanceAPI.root, 'config', 'config.yml'))

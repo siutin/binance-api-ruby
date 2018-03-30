@@ -5,7 +5,7 @@ require 'json'
 require 'binance_api/result'
 
 module BinanceAPI
-  class Client
+  class REST
     BASE_URL = 'https://api.binance.com'.freeze
 
     def ping

@@ -3,25 +3,25 @@ RSpec.describe BinanceAPI do
     expect(BinanceAPI::VERSION).not_to be nil
   end
 
-  let(:client) { BinanceAPI.new }
-  context 'Returns a BinanceAPI::Client' do
-    it { expect(client).to be_a_kind_of(BinanceAPI::Client) }
+  let(:rest) { BinanceAPI.rest }
+  context 'Returns a BinanceAPI::Rest' do
+    it { expect(rest).to be_a_kind_of(BinanceAPI::REST) }
   end
 
   context '#ping' do
-    subject { client.ping }
+    subject { rest.ping }
     it { is_expected.to have_attributes(value: {}) }
     it { expect(subject.success?).to be_truthy }
   end
 
   context '#server_time' do
-    subject { client.server_time }
+    subject { rest.server_time }
     it { is_expected.to have_attributes(value: { serverTime: a_kind_of(Integer) }) }
     it { expect(subject.success?).to be_truthy }
   end
 
   context '#depth' do
-    subject { client.depth('BTCUSDT', limit: 5) }
+    subject { rest.depth('BTCUSDT', limit: 5) }
     it {
       is_expected.to have_attributes(value: match(
           lastUpdateId: a_kind_of(Integer),
@@ -43,7 +43,7 @@ RSpec.describe BinanceAPI do
   end
 
   context '#exchange_info' do
-    subject { client.exchange_info }
+    subject { rest.exchange_info }
     it_behaves_like 'exchange_information_schema' do
       it { is_expected.to have_attributes(value: schema) }
     end
