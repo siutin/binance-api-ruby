@@ -119,14 +119,8 @@ module BinanceAPI
           timestamp: timestamp.to_i * 1000 # to milliseconds
       }
 
-      params = params.reject { |_k, v| v.nil? }
-
-      query_string = URI.encode_www_form(params)
-      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
-      params = params.merge(signature: signature)
-
       response = safe do
-        RestClient.post "#{BASE_URL}/api/v3/order", params, 'X-MBX-APIKEY' => api_key
+        RestClient.post "#{BASE_URL}/api/v3/order", params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
       json = JSON.parse(response.body, symbolize_names: true)
@@ -152,14 +146,8 @@ module BinanceAPI
         timestamp: timestamp.to_i * 1000 # to milliseconds
       }
 
-      params = params.reject { |_k, v| v.nil? }
-
-      query_string = URI.encode_www_form(params)
-      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
-      params = params.merge(signature: signature)
-
       response = safe do
-        RestClient.post "#{BASE_URL}/api/v3/order/test", params, 'X-MBX-APIKEY' => api_key
+        RestClient.post "#{BASE_URL}/api/v3/order/test", params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
       json = JSON.parse(response.body, symbolize_names: true)
@@ -178,14 +166,8 @@ module BinanceAPI
           timestamp: timestamp.to_i * 1000 # to milliseconds
       }
 
-      params = params.reject { |_k, v| v.nil? }
-
-      query_string = URI.encode_www_form(params)
-      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
-      params = params.merge(signature: signature)
-
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/order", params: params, 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/order", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
       json = JSON.parse(response.body, symbolize_names: true)
@@ -205,14 +187,8 @@ module BinanceAPI
           timestamp: timestamp.to_i * 1000 # to milliseconds
       }
 
-      params = params.reject { |_k, v| v.nil? }
-
-      query_string = URI.encode_www_form(params)
-      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
-      params = params.merge(signature: signature)
-
       response = safe do
-        RestClient.delete "#{BASE_URL}/api/v3/order", params: params, 'X-MBX-APIKEY' => api_key
+        RestClient.delete "#{BASE_URL}/api/v3/order", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
       json = JSON.parse(response.body, symbolize_names: true)
@@ -229,14 +205,8 @@ module BinanceAPI
           timestamp: timestamp.to_i * 1000 # to milliseconds
       }
 
-      params = params.reject { |_k, v| v.nil? }
-
-      query_string = URI.encode_www_form(params)
-      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
-      params = params.merge(signature: signature)
-
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/openOrders", params: params, 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/openOrders", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
       json = JSON.parse(response.body, symbolize_names: true)
@@ -256,14 +226,8 @@ module BinanceAPI
           timestamp: timestamp.to_i * 1000 # to milliseconds
       }
 
-      params = params.reject { |_k, v| v.nil? }
-
-      query_string = URI.encode_www_form(params)
-      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
-      params = params.merge(signature: signature)
-
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/allOrders", params: params, 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/allOrders", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
       json = JSON.parse(response.body, symbolize_names: true)
@@ -280,14 +244,8 @@ module BinanceAPI
           timestamp: timestamp.to_i * 1000 # to milliseconds
       }
 
-      params = params.reject { |_k, v| v.nil? }
-
-      query_string = URI.encode_www_form(params)
-      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
-      params = params.merge(signature: signature)
-
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/account", params: params, 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/account", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
       json = JSON.parse(response.body, symbolize_names: true)
@@ -306,14 +264,8 @@ module BinanceAPI
           timestamp: timestamp.to_i * 1000 # to milliseconds
       }
 
-      params = params.reject { |_k, v| v.nil? }
-
-      query_string = URI.encode_www_form(params)
-      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
-      params = params.merge(signature: signature)
-
       response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/myTrades", params: params, 'X-MBX-APIKEY' => api_key
+        RestClient.get "#{BASE_URL}/api/v3/myTrades", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
       json = JSON.parse(response.body, symbolize_names: true)
