@@ -1,43 +1,119 @@
-# BinanceApi
+# binance-api-ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/binance_api`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A wrapper written in ruby for Binance API
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Manually install using [RubyGems](http://rubygems.org/):
 
-```ruby
+```
+gem install binance_api
+```
+
+Or add it to your Gemfile:
+
+```
 gem 'binance_api'
 ```
 
-And then execute:
+## Examples
+  
+### using a REST Client
+```
+require 'binance_api'
 
-    $ bundle
+# initialize a rest client
+rest_client = BinanceAPI::REST.new
 
-Or install it yourself as:
+result = rest_client.ticker_24hr('BNBBTC')
+#<BinanceAPI::Result:0x000000000220c7c0 ... >
 
-    $ gem install binance_api
+>> result.success?
+true
 
-## Usage
+# return a response value in Hash
+>> result.value
+{ :symbol=>"BNBBTC",  :priceChange=>"0.00003640", :priceChangePerce .... }
 
-TODO: Write usage instructions here
+```
 
-## Development
+### using a Stream client
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```
+require 'binance_api'
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+# initialize a combined stream client
+stream = BinanceAPI::Stream.new(['bnbbtc@aggTrade', 'bnbbtc@trade'], on_message: ->(msg) { puts "message: #{msg.data}" })
 
-## Contributing
+stream.start
+>> -- websocket open (wss://stream.binance.com:9443/stream?streams=bnbbtc@aggTrade/bnbbtc@trade)
+>> message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436817258,"s":"BNBBTC","a":11744566,"p":"0.00147820","q":"0.15000000","f":13627823,"l":13627823,"T":1522436817255,"m":false,"M":true}}
+>> message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436817257,"s":"BNBBTC","t":13627823,"p":"0.00147820","q":"0.15000000","b":35456123,"a":35456121,"T":1522436817255,"m":false,"M":true}}
+>> message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436819021,"s":"BNBBTC","t":13627824,"p":"0.00147820","q":"2.63000000","b":35456125,"a":35456121,"T":1522436819021,"m":false,"M":true}}
+>> message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436819022,"s":"BNBBTC","a":11744567,"p":"0.00147820","q":"2.63000000","f":13627824,"l":13627824,"T":1522436819021,"m":false,"M":true}}
+>> message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436823612,"s":"BNBBTC","a":11744568,"p":"0.00147660","q":"24.88000000","f":13627825,"l":13627826,"T":1522436823609,"m":true,"M":true}}
+>> message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436823611,"s":"BNBBTC","t":13627825,"p":"0.00147660","q":"0.01000000","b":35456076,"a":35456136,"T":1522436823609,"m":true,"M":true}}
+>> message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436823611,"s":"BNBBTC","t":13627826,"p":"0.00147660","q":"24.87000000","b":35456127,"a":35456136,"T":1522436823609,"m":true,"M":true}}
+>> ...
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/binance_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+```
+
+## Structure
+
+API | Class
+------ | --------
+Rest API | BinanceAPI::REST 
+Withdraw API | BinanceAPI::WAPI
+Account Stream | BinanceAPI::Stream 
+
+## REST Client Calls
+
+    #ping
+    #server_time
+    #exchange_info
+    #depth
+    #trades
+    #historical_trades
+    #aggregate_trades_list
+    #klines
+    #ticker_24hr
+    #ticker_price
+    #ticker_book
+    #order
+    #order_test
+    #get_order
+    #cancel_order
+    #open_orders
+    #all_orders
+    #account
+    #my_trades
+    #start_user_data_stream
+    #keep_alive_user_data_stream
+    #close_user_data_stream
+    
+## Withdrawal Client Calls
+    #withdraw
+    #deposit_history
+    #withdraw_history
+    #deposit_address
+    #withdraw_fee
+    #account_status
+    #system_status
+
+## Stream Client Calls
+
+    #close
+    #start
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
+## Donations
 
-Everyone interacting in the BinanceApi project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/binance_api/blob/master/CODE_OF_CONDUCT.md).
+If this repo made you feel useful in any way, you can always leave me a tips at:
+```
+ BNB: 0x607cb799cb2e9b777e1453d4f2450eae738fd342
+ BTC: 1LwjLrBwQtpCiWKCpfJ4JhYq3bkMerdjXU
+```
