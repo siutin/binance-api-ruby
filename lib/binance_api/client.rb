@@ -167,6 +167,160 @@ module BinanceAPI
       BinanceAPI::Result.new(json, response.code == 200)
     end
 
+    def get_order(symbol, options = {})
+      recv_window = options.delete(:recv_window) || 5000
+      timestamp = options.delete(:timestamp) || Time.now
+
+      params = {
+          symbol: symbol,
+          orderId: options.fetch(:order_id, nil),
+          origClientOrderId: options.fetch(:orig_client_order_id, nil),
+          recvWindow: recv_window,
+          timestamp: timestamp.to_i * 1000 # to milliseconds
+      }
+
+      params = params.reject { |_k, v| v.nil? }
+
+      query_string = URI.encode_www_form(params)
+      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
+      params = params.merge(signature: signature)
+
+      response = safe do
+        RestClient.get "#{BASE_URL}/api/v3/order", params: params, 'X-MBX-APIKEY' => api_key
+      end
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
+    def cancel_order(symbol, options = {})
+      recv_window = options.delete(:recv_window) || 5000
+      timestamp = options.delete(:timestamp) || Time.now
+
+      params = {
+          symbol: symbol,
+          orderId: options.fetch(:order_id, nil),
+          origClientOrderId: options.fetch(:orig_client_order_id, nil),
+          newClientOrderId: options.fetch(:new_client_order_id, nil),
+          recvWindow: recv_window,
+          timestamp: timestamp.to_i * 1000 # to milliseconds
+      }
+
+      params = params.reject { |_k, v| v.nil? }
+
+      query_string = URI.encode_www_form(params)
+      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
+      params = params.merge(signature: signature)
+
+      response = safe do
+        RestClient.delete "#{BASE_URL}/api/v3/order", params: params, 'X-MBX-APIKEY' => api_key
+      end
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
+    def open_orders(symbol, options = {})
+      recv_window = options.delete(:recv_window) || 5000
+      timestamp = options.delete(:timestamp) || Time.now
+
+      params = {
+          symbol: symbol,
+          recvWindow: recv_window,
+          timestamp: timestamp.to_i * 1000 # to milliseconds
+      }
+
+      params = params.reject { |_k, v| v.nil? }
+
+      query_string = URI.encode_www_form(params)
+      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
+      params = params.merge(signature: signature)
+
+      response = safe do
+        RestClient.get "#{BASE_URL}/api/v3/openOrders", params: params, 'X-MBX-APIKEY' => api_key
+      end
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
+    def all_orders(symbol, options = {})
+      recv_window = options.delete(:recv_window) || 5000
+      timestamp = options.delete(:timestamp) || Time.now
+      limit = options.delete(:limit) || 500
+
+      params = {
+          symbol: symbol,
+          orderId: options.fetch(:order_id, nil),
+          limit: limit,
+          recvWindow: recv_window,
+          timestamp: timestamp.to_i * 1000 # to milliseconds
+      }
+
+      params = params.reject { |_k, v| v.nil? }
+
+      query_string = URI.encode_www_form(params)
+      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
+      params = params.merge(signature: signature)
+
+      response = safe do
+        RestClient.get "#{BASE_URL}/api/v3/allOrders", params: params, 'X-MBX-APIKEY' => api_key
+      end
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
+
+    def account(options = {})
+      recv_window = options.delete(:recv_window) || 5000
+      timestamp = options.delete(:timestamp) || Time.now
+
+      params = {
+          recvWindow: recv_window,
+          timestamp: timestamp.to_i * 1000 # to milliseconds
+      }
+
+      params = params.reject { |_k, v| v.nil? }
+
+      query_string = URI.encode_www_form(params)
+      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
+      params = params.merge(signature: signature)
+
+      response = safe do
+        RestClient.get "#{BASE_URL}/api/v3/account", params: params, 'X-MBX-APIKEY' => api_key
+      end
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
+    def my_trades(symbol, options = {})
+      recv_window = options.delete(:recv_window) || 5000
+      timestamp = options.delete(:timestamp) || Time.now
+      limit = options.delete(:limit) || 500
+      params = {
+          symbol: symbol,
+          limit: limit,
+          fromId: options.fetch(:from_id, nil),
+          recvWindow: recv_window,
+          timestamp: timestamp.to_i * 1000 # to milliseconds
+      }
+
+      params = params.reject { |_k, v| v.nil? }
+
+      query_string = URI.encode_www_form(params)
+      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
+      params = params.merge(signature: signature)
+
+      response = safe do
+        RestClient.get "#{BASE_URL}/api/v3/myTrades", params: params, 'X-MBX-APIKEY' => api_key
+      end
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
     protected
 
     # ensure to return a response object
