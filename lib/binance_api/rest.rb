@@ -89,12 +89,12 @@ module BinanceAPI
     #     timeInForce: 'GTC',
     #     quantity: 1,
     #     price: 0.1,
-    #     recvWindow: 5000,
+    #     recvWindow: BinanceAPI.recv_window,
     #     timestamp: 1499827319559
     # }
 
     def order(symbol, side, type, quantity, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -122,7 +122,7 @@ module BinanceAPI
     end
 
     def order_test(symbol, side, type, quantity, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -150,7 +150,7 @@ module BinanceAPI
     end
 
     def get_order(symbol, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -171,7 +171,7 @@ module BinanceAPI
     end
 
     def cancel_order(symbol, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -193,7 +193,7 @@ module BinanceAPI
     end
 
     def open_orders(symbol, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -212,7 +212,7 @@ module BinanceAPI
     end
 
     def all_orders(symbol, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
       limit = options.delete(:limit) || 500
 
@@ -235,7 +235,7 @@ module BinanceAPI
 
 
     def account(options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -253,7 +253,7 @@ module BinanceAPI
     end
 
     def my_trades(symbol, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
       limit = options.delete(:limit) || 500
       params = {

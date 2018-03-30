@@ -6,12 +6,19 @@ require 'yaml'
 
 module BinanceAPI
   class << self
+
     def rest
       @rest ||= BinanceAPI::REST.new
     end
 
     def wapi
       @wapi ||= BinanceAPI::WAPI.new
+    end
+
+    attr_writer :recv_window
+
+    def recv_window
+      @recv_window || 5000
     end
 
     def load_config

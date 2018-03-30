@@ -5,7 +5,7 @@ require 'binance_api/result'
 module BinanceAPI
   class WAPI < BinanceAPI::Base
     def withdraw(asset, address, amount, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -28,7 +28,7 @@ module BinanceAPI
     end
 
     def deposit_history(asset, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -50,7 +50,7 @@ module BinanceAPI
     end
 
     def withdraw_history(asset, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -72,7 +72,7 @@ module BinanceAPI
     end
 
     def deposit_address(asset, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -92,7 +92,7 @@ module BinanceAPI
     end
 
     def withdraw_fee(asset, options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
@@ -111,7 +111,7 @@ module BinanceAPI
     end
 
     def account_status(options = {})
-      recv_window = options.delete(:recv_window) || 5000
+      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
       params = {
