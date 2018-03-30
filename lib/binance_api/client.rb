@@ -321,6 +321,24 @@ module BinanceAPI
       BinanceAPI::Result.new(json, response.code == 200)
     end
 
+    def start_user_data_stream
+      response = safe { RestClient.post "#{BASE_URL}/api/v1/userDataStream", {}, 'X-MBX-APIKEY' => api_key }
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
+    def keep_alive_user_data_stream(listen_key)
+      response = safe { RestClient.put "#{BASE_URL}/api/v1/userDataStream", { listenKey: listen_key }, 'X-MBX-APIKEY' => api_key }
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
+    def close_user_data_stream(listen_key)
+      response = safe { RestClient.delete "#{BASE_URL}/api/v1/userDataStream", params: { listenKey: listen_key }, 'X-MBX-APIKEY' => api_key }
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
+
     protected
 
     # ensure to return a response object
