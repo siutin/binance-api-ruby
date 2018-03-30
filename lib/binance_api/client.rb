@@ -101,17 +101,26 @@ module BinanceAPI
     #     timestamp: 1499827319559
     # }
 
-    def order_test(symbol, side: nil, type: nil, quantity: 0, price: 0.1, recv_window: 5000, timestamp: Time.now)
+    def order_test(symbol, side, type, quantity, options = {})
+      recv_window = options.delete(:recv_window) || 5000
+      timestamp = options.delete(:timestamp) || Time.now
+
       params = {
-          symbol: symbol,
-          side: side,
-          type: type,
-          timeInForce: 'GTC',
-          quantity: quantity,
-          price: price,
-          recvWindow: recv_window,
-          timestamp: timestamp.to_i * 1000 # to milliseconds
+        symbol: symbol,
+        side: side,
+        type: type,
+        timeInForce: options.fetch(:time_in_force, nil),
+        quantity: quantity,
+        price: options.fetch(:price, nil),
+        newClientOrderId: options.fetch(:new_client_order_id, nil),
+        stopPrice: options.fetch(:stop_price, nil),
+        icebergQty: options.fetch(:iceberg_qty, nil),
+        newOrderRespType: options.fetch(:new_order_resp_type, nil),
+        recvWindow: recv_window,
+        timestamp: timestamp.to_i * 1000 # to milliseconds
       }
+
+      params = params.reject { |_k, v| v.nil? }
 
       query_string = URI.encode_www_form(params)
       signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
