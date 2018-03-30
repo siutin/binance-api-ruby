@@ -9,40 +9,34 @@ module BinanceAPI
   class REST < BinanceAPI::Base
     def ping
       response = safe { RestClient.get("#{BASE_URL}/api/v1/ping") }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def server_time
       response = safe { RestClient.get("#{BASE_URL}/api/v1/time") }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def exchange_info
       response = safe { RestClient.get("#{BASE_URL}/api/v1/exchangeInfo") }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def depth(symbol, limit: 100)
       response = safe { RestClient.get("#{BASE_URL}/api/v1/depth", params: { symbol: symbol, limit: limit }) }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def trades(symbol, limit: 500)
       response = safe { RestClient.get("#{BASE_URL}/api/v1/trades", params: { symbol: symbol, limit: limit }) }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def historical_trades(symbol, limit: 500, from_id: nil)
       params = { symbol: symbol, limit: limit }
       params = params.merge(fromId: from_id) unless from_id.nil?
       response = safe { RestClient.get "#{BASE_URL}/api/v1/historicalTrades", params: params, 'X-MBX-APIKEY' => api_key }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def aggregate_trades_list(symbol, from_id: nil, start_time: nil, end_time: nil, limit: 500)
@@ -54,8 +48,7 @@ module BinanceAPI
         end
       end
       response = safe { RestClient.get("#{BASE_URL}/api/v1/aggTrades", params: params) }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def klines(symbol, interval, start_time: nil, end_time: nil, limit: 500)
@@ -67,26 +60,22 @@ module BinanceAPI
       end
 
       response = safe { RestClient.get("#{BASE_URL}/api/v1/klines", params: params) }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def ticker_24hr(symbol)
       response = safe { RestClient.get("#{BASE_URL}/api/v1/ticker/24hr", params: { symbol: symbol }) }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def ticker_price(symbol)
       response = safe { RestClient.get("#{BASE_URL}/api/v3/ticker/price", params: { symbol: symbol }) }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def ticker_book(symbol)
       response = safe { RestClient.get("#{BASE_URL}/api/v3/ticker/bookTicker", params: { symbol: symbol }) }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     # {
@@ -123,8 +112,7 @@ module BinanceAPI
         RestClient.post "#{BASE_URL}/api/v3/order", params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def order_test(symbol, side, type, quantity, options = {})
@@ -150,8 +138,7 @@ module BinanceAPI
         RestClient.post "#{BASE_URL}/api/v3/order/test", params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def get_order(symbol, options = {})
@@ -170,8 +157,7 @@ module BinanceAPI
         RestClient.get "#{BASE_URL}/api/v3/order", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def cancel_order(symbol, options = {})
@@ -191,8 +177,7 @@ module BinanceAPI
         RestClient.delete "#{BASE_URL}/api/v3/order", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def open_orders(symbol, options = {})
@@ -209,8 +194,7 @@ module BinanceAPI
         RestClient.get "#{BASE_URL}/api/v3/openOrders", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def all_orders(symbol, options = {})
@@ -230,8 +214,7 @@ module BinanceAPI
         RestClient.get "#{BASE_URL}/api/v3/allOrders", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
 
@@ -248,8 +231,7 @@ module BinanceAPI
         RestClient.get "#{BASE_URL}/api/v3/account", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def my_trades(symbol, options = {})
@@ -268,27 +250,31 @@ module BinanceAPI
         RestClient.get "#{BASE_URL}/api/v3/myTrades", params: params_with_signature(params, api_secret), 'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def start_user_data_stream
       response = safe { RestClient.post "#{BASE_URL}/api/v1/userDataStream", {}, 'X-MBX-APIKEY' => api_key }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def keep_alive_user_data_stream(listen_key)
       response = safe { RestClient.put "#{BASE_URL}/api/v1/userDataStream", { listenKey: listen_key }, 'X-MBX-APIKEY' => api_key }
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200)
+      build_result response
     end
 
     def close_user_data_stream(listen_key)
       response = safe { RestClient.delete "#{BASE_URL}/api/v1/userDataStream", params: { listenKey: listen_key }, 'X-MBX-APIKEY' => api_key }
+      build_result response
+      end
+    end
+
+    protected
+
+    def build_result(response)
       json = JSON.parse(response.body, symbolize_names: true)
       BinanceAPI::Result.new(json, response.code == 200)
     end
-    
+
   end
 end

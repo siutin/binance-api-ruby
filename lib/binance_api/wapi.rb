@@ -24,8 +24,7 @@ module BinanceAPI
                        'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200 && json.fetch(:success, false))
+      build_result response
     end
 
     def deposit_history(asset, options = {})
@@ -47,8 +46,7 @@ module BinanceAPI
                        'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200 && json.fetch(:success, false))
+      build_result response
     end
 
     def withdraw_history(asset, options = {})
@@ -70,8 +68,7 @@ module BinanceAPI
                        'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200 && json.fetch(:success, false))
+      build_result response
     end
 
     def deposit_address(asset, options = {})
@@ -91,8 +88,7 @@ module BinanceAPI
                        'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200 && json.fetch(:success, false))
+      build_result response
     end
 
     def withdraw_fee(asset, options = {})
@@ -111,8 +107,7 @@ module BinanceAPI
                        'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200 && json.fetch(:success, false))
+      build_result response
     end
 
     def account_status(options = {})
@@ -130,14 +125,22 @@ module BinanceAPI
                        'X-MBX-APIKEY' => api_key
       end
 
-      json = JSON.parse(response.body, symbolize_names: true)
-      BinanceAPI::Result.new(json, response.code == 200 && json.fetch(:success, false))
+      build_result response
     end
 
     def system_status
       response = safe { RestClient.get("#{BASE_URL}/wapi/v3/systemStatus.html") }
+      
       json = JSON.parse(response.body, symbolize_names: true)
       BinanceAPI::Result.new(json, response.code == 200)
     end
+
+    protected
+
+    def build_result(response)
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200 && json.fetch(:success, false))
+    end
+    
   end
 end
