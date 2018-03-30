@@ -1,5 +1,6 @@
 require 'binance_api/version'
 require 'binance_api/client'
+require 'binance_api/stream'
 require 'yaml'
 
 module BinanceAPI
