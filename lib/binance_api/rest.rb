@@ -2,12 +2,11 @@ require 'rest-client'
 require 'date'
 require 'uri'
 require 'json'
+require 'binance_api/base'
 require 'binance_api/result'
 
 module BinanceAPI
-  class REST
-    BASE_URL = 'https://api.binance.com'.freeze
-
+  class REST < BinanceAPI::Base
     def ping
       response = safe { RestClient.get("#{BASE_URL}/api/v1/ping") }
       json = JSON.parse(response.body, symbolize_names: true)
@@ -338,26 +337,6 @@ module BinanceAPI
       json = JSON.parse(response.body, symbolize_names: true)
       BinanceAPI::Result.new(json, response.code == 200)
     end
-
-    protected
-
-    # ensure to return a response object
-    def safe
-      yield
-    rescue RestClient::ExceptionWithResponse => err
-      return err.response
-    end
-
-    def config
-      @config ||= BinanceAPI.load_config
-    end
-
-    def api_key
-      config['API_KEY'].freeze
-    end
-
-    def api_secret
-      config['API_SECRET'].freeze
-    end
+    
   end
 end
