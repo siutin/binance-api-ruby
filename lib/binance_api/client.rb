@@ -1,4 +1,6 @@
 require 'rest-client'
+require 'date'
+require 'uri'
 require 'json'
 require 'binance_api/result'
 
@@ -88,8 +90,49 @@ module BinanceAPI
       BinanceAPI::Result.new(json, response.code == 200)
     end
 
+    # {
+    #     symbol: 'LTCBTC',
+    #     side: 'BUY',
+    #     type: 'LIMIT',
+    #     timeInForce: 'GTC',
+    #     quantity: 1,
+    #     price: 0.1,
+    #     recvWindow: 5000,
+    #     timestamp: 1499827319559
+    # }
+
+    def order_test(symbol, side: nil, type: nil, quantity: 0, price: 0.1, recv_window: 5000, timestamp: Time.now)
+      params = {
+          symbol: symbol,
+          side: side,
+          type: type,
+          timeInForce: 'GTC',
+          quantity: quantity,
+          price: price,
+          recvWindow: recv_window,
+          timestamp: timestamp.to_i * 1000 # to milliseconds
+      }
+
+      query_string = URI.encode_www_form(params)
+      signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), api_secret, query_string)
+      params = params.merge(signature: signature)
+
+      response = safe do
+        RestClient.post "#{BASE_URL}/api/v3/order/test", params, 'X-MBX-APIKEY' => api_key
+      end
+
+      json = JSON.parse(response.body, symbolize_names: true)
+      BinanceAPI::Result.new(json, response.code == 200)
+    end
 
     protected
+
+    # ensure to return a response object
+    def safe
+      yield
+    rescue RestClient::ExceptionWithResponse => err
+      return err.response
+    end
 
     def config
       @config ||= BinanceAPI.load_config
