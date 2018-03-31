@@ -45,16 +45,16 @@ require 'binance_api'
 # initialize a combined stream client
 stream = BinanceAPI::Stream.new(['bnbbtc@aggTrade', 'bnbbtc@trade'], on_message: ->(msg) { puts "message: #{msg.data}" })
 
-stream.start
->> -- websocket open (wss://stream.binance.com:9443/stream?streams=bnbbtc@aggTrade/bnbbtc@trade)
->> message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436817258,"s":"BNBBTC","a":11744566,"p":"0.00147820","q":"0.15000000","f":13627823,"l":13627823,"T":1522436817255,"m":false,"M":true}}
->> message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436817257,"s":"BNBBTC","t":13627823,"p":"0.00147820","q":"0.15000000","b":35456123,"a":35456121,"T":1522436817255,"m":false,"M":true}}
->> message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436819021,"s":"BNBBTC","t":13627824,"p":"0.00147820","q":"2.63000000","b":35456125,"a":35456121,"T":1522436819021,"m":false,"M":true}}
->> message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436819022,"s":"BNBBTC","a":11744567,"p":"0.00147820","q":"2.63000000","f":13627824,"l":13627824,"T":1522436819021,"m":false,"M":true}}
->> message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436823612,"s":"BNBBTC","a":11744568,"p":"0.00147660","q":"24.88000000","f":13627825,"l":13627826,"T":1522436823609,"m":true,"M":true}}
->> message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436823611,"s":"BNBBTC","t":13627825,"p":"0.00147660","q":"0.01000000","b":35456076,"a":35456136,"T":1522436823609,"m":true,"M":true}}
->> message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436823611,"s":"BNBBTC","t":13627826,"p":"0.00147660","q":"24.87000000","b":35456127,"a":35456136,"T":1522436823609,"m":true,"M":true}}
->> ...
+>> stream.start
+ -- websocket open (wss://stream.binance.com:9443/stream?streams=bnbbtc@aggTrade/bnbbtc@trade)
+ message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436817258,"s":"BNBBTC","a":11744566,"p":"0.00147820","q":"0.15000000","f":13627823,"l":13627823,"T":1522436817255,"m":false,"M":true}}
+ message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436817257,"s":"BNBBTC","t":13627823,"p":"0.00147820","q":"0.15000000","b":35456123,"a":35456121,"T":1522436817255,"m":false,"M":true}}
+ message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436819021,"s":"BNBBTC","t":13627824,"p":"0.00147820","q":"2.63000000","b":35456125,"a":35456121,"T":1522436819021,"m":false,"M":true}}
+ message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436819022,"s":"BNBBTC","a":11744567,"p":"0.00147820","q":"2.63000000","f":13627824,"l":13627824,"T":1522436819021,"m":false,"M":true}}
+ message: {"stream":"bnbbtc@aggTrade","data":{"e":"aggTrade","E":1522436823612,"s":"BNBBTC","a":11744568,"p":"0.00147660","q":"24.88000000","f":13627825,"l":13627826,"T":1522436823609,"m":true,"M":true}}
+ message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436823611,"s":"BNBBTC","t":13627825,"p":"0.00147660","q":"0.01000000","b":35456076,"a":35456136,"T":1522436823609,"m":true,"M":true}}
+ message: {"stream":"bnbbtc@trade","data":{"e":"trade","E":1522436823611,"s":"BNBBTC","t":13627826,"p":"0.00147660","q":"24.87000000","b":35456127,"a":35456136,"T":1522436823609,"m":true,"M":true}}
+ ...
 
 
 ```
@@ -64,8 +64,8 @@ stream.start
 API | Class
 ------ | --------
 Rest API | BinanceAPI::REST 
-Withdraw API | BinanceAPI::WAPI
-Account Stream | BinanceAPI::Stream 
+Withdrawal API | BinanceAPI::WAPI
+WebSocket Stream | BinanceAPI::Stream 
 
 ## REST Client Calls
 
