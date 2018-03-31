@@ -37,6 +37,18 @@ true
 
 ```
 
+## get last 5 BNB/BTC orders
+
+```
+ # fill in your profile 
+ client.api_key = 'YOUR_API_KEY'
+ client.api_secret = 'YOUR_API_SECRET' 
+ 
+ >> client.all_orders('BNBBTC', limit: 10).value
+ [{:symbol=>"BNBBTC", :orderId=>25456733, :clientOrderId=>"ios_a323664543576765623787ybdfsdcax1231d", :price=>"0.00128567", :origQty=>"12.1000000", ...}, {...]
+ 
+```
+
 ### using a Stream client
 
 ```
