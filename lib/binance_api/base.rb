@@ -8,6 +8,21 @@ module BinanceAPI
   class Base
     BASE_URL = 'https://api.binance.com'.freeze
 
+    def initialize(options: {})
+      @api_key = options.fetch(:api_key, nil)
+      @api_secret = options.fetch(:api_secret, nil)
+    end
+
+    attr_writer :api_key, :api_secret
+
+    def api_key
+      @api_key || BinanceAPI.api_key || raise('missing api_key')
+    end
+
+    def api_secret
+      @api_secret || BinanceAPI.api_secret || raise('missing api_secret')
+    end
+
     protected
 
     def params_with_signature(params, secret)
@@ -22,18 +37,6 @@ module BinanceAPI
       yield
     rescue RestClient::ExceptionWithResponse => err
       return err.response
-    end
-
-    def config
-      @config ||= BinanceAPI.load_config
-    end
-
-    def api_key
-      config['API_KEY'].freeze
-    end
-
-    def api_secret
-      config['API_SECRET'].freeze
     end
   end
 end

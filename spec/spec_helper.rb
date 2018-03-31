@@ -1,6 +1,11 @@
 require "bundler/setup"
 require "binance_api"
 
+# change to your profile at config/config.yml
+config = YAML.load_file(File.join(__dir__, '..', 'config', 'config.yml'))
+BinanceAPI.api_key = config['API_KEY']
+BinanceAPI.api_secret = config['API_SECRET']
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"

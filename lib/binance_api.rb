@@ -21,12 +21,7 @@ module BinanceAPI
       @recv_window || 5000
     end
 
-    def load_config
-      YAML.load_file(File.join(BinanceAPI.root, 'config', 'config.yml'))
-    end
+    attr_accessor :api_key, :api_secret
 
-    def root
-      File.expand_path('../..', __FILE__)
-    end
   end
 end
