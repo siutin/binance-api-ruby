@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    binance_api (1.0.0)
+    binance_api (1.0.1)
       rest-client (~> 2.0)
       websocket-client-simple (~> 0.3.0)
 
