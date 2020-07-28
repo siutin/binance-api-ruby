@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/sapi/v1/broker/subAccount
+    body:
+      encoding: UTF-8
+      string: recvWindow=5000&timestamp=1595920557000&signature=a24ef556bda308da144439e8e90c340bba43830362ed6b53963dee6aab98db84
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.0.0 x86_64) ruby/2.6.3p62
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '114'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 28 Jul 2020 07:15:57 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=F8EDC83E80914C8BADEC6F526F666B10; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 c60880d44880ad913f911851a63aacdf.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - X2lOvgq-io3tkopi-ykDbfkMQWC8nknR6uzjKhTQUGu_bWd30xis7w==
+    body:
+      encoding: UTF-8
+      string: '{"code":-1022,"msg":"Signature for this request is not valid."}'
+  recorded_at: Tue, 28 Jul 2020 07:15:57 GMT
+recorded_with: VCR 6.0.0
