@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.binance.com/sapi/v1/broker/subAccountApi
+    body:
+      encoding: UTF-8
+      string: subAccountId=-1&subAccountApiKey=CgXjYwP2AwWapJKEyKqbZ1BgcOtFkrUBomefbrw2hDGLyigvrEL4i7DXpc5ofjQM&recvWindow=5000&timestamp=1596048331000&signature=26d0e41c502c10606d38f104c39dbea2054b12874c6968b4a1b235fcf4893410
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '212'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '71'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Jul 2020 18:45:32 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=F6EBF0FED4B2321B009EF1E6A103B3C0; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 4cea94b0894987ae880983d50307d214.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - oSgZs8d9wvIT-jpigy2oMq-Snmd4mGIaID8_AG_qTZAIrdj6vfz3WA==
+    body:
+      encoding: UTF-8
+      string: '{"code":-9000,"msg":"This two users are not in parent-child relation."}'
+  recorded_at: Wed, 29 Jul 2020 18:45:32 GMT
+recorded_with: VCR 6.0.0

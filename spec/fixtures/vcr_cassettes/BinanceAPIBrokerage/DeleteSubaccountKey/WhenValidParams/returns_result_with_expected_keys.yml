@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.binance.com/sapi/v1/broker/subAccountApi
+    body:
+      encoding: UTF-8
+      string: subAccountId=495279769361068032&subAccountApiKey=CgXjYwP2AwWapJKEyKqbZ1BgcOtFkrUBomefbrw2hDGLyigvrEL4i7DXpc5ofjQM&recvWindow=5000&timestamp=1596048189000&signature=2399504d9a26394577cccf3cbaaea58211eb3d30dfd3d78844b79612576b591f
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '228'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Jul 2020 18:43:09 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=3886165AAD989717590369096146B43E; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 5d40d4ac7c3a1e18748166636540091f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - GR9EhvRACk-xClRweoJnM1cttX1KDRUNhUYEzqt6B0BvJxW2v74FhA==
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 29 Jul 2020 18:43:10 GMT
+recorded_with: VCR 6.0.0

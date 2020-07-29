@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/sapi/v1/broker/subAccountApi
+    body:
+      encoding: UTF-8
+      string: subAccountId=-1&canTrade=true&recvWindow=5000&timestamp=1596046336000&signature=6f12147f2fd6d8d3774b195495eaf7e56bd5086208a8e79843003082e8b52277
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '144'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '71'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Jul 2020 18:12:16 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=EBF56F3A18C76F2B4B4414FCB1315806; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 a3735c121c062c1788822db6bee539a8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - quf4bbsDCMSZ8yZ2Wivm9w6xlqDZOG7Uk_MBle_hM6TwxynM3I-mUw==
+    body:
+      encoding: UTF-8
+      string: '{"code":-9000,"msg":"This two users are not in parent-child relation."}'
+  recorded_at: Wed, 29 Jul 2020 18:12:16 GMT
+recorded_with: VCR 6.0.0

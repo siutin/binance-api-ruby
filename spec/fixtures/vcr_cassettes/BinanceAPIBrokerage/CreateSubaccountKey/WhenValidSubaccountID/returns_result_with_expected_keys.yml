@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/sapi/v1/broker/subAccountApi
+    body:
+      encoding: UTF-8
+      string: subAccountId=495279769361068032&canTrade=true&recvWindow=5000&timestamp=1596046334000&signature=8389880a991673ef4c9647dfea3cab63d5c5e1658a446e58ab7566d125a7d462
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '160'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '249'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Jul 2020 18:12:15 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=861DE7BCEB8FC822E5DB2FF24D65D9CD; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 c35525724b74ec2ec80741ffbf1ff218.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - tzFzGOj2s-y-86fFLhyjR8bBe6NGVBSExBxKnCeInyKL-MssCsNSTQ==
+    body:
+      encoding: UTF-8
+      string: '{"apiKey":"CgXjYwP2AwWapJKEyKqbZ1BgcOtFkrUBomefbrw2hDGLyigvrEL4i7DXpc5ofjQM","secretKey":"nmfnYs9CiwAijoUedmcMVShKyGtUEYtVXlHnWMhNc6XO9hkbWTRJ7P8srR8SML9t","subaccountId":"495279769361068032","canTrade":true,"marginTrade":false,"futuresTrade":false}'
+  recorded_at: Wed, 29 Jul 2020 18:12:15 GMT
+recorded_with: VCR 6.0.0

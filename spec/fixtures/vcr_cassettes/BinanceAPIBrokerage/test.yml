@@ -1,0 +1,216 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/sapi/v1/broker/subAccountApi
+    body:
+      encoding: UTF-8
+      string: recvWindow=5000&timestamp=1596013214000&signature=ed18a8fd96b7daf5ad849e036da82c6adc184f0ed547364ac55dfa0767c3b599
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '114'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '134'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Jul 2020 09:00:14 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=3463BEAC0BF715AEF123DBE3878D6C91; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 50f21cb925e6471490e080147e252d7d.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - ntdblIuQ_tvSu5UVGkN_O_9APG6NNym9ndEKEoiF-bSiX4TM7IKGJA==
+    body:
+      encoding: UTF-8
+      string: '{"code":-1102,"msg":"Mandatory parameter ''canTrade is not null|subAccountId
+        is not null'' was not sent, was empty/null, or malformed."}'
+  recorded_at: Wed, 29 Jul 2020 09:00:14 GMT
+- request:
+    method: post
+    uri: https://api.binance.com/sapi/v1/broker/subAccountApi
+    body:
+      encoding: UTF-8
+      string: recvWindow=5000&timestamp=1596013227000&signature=79826d28d846fc23807a978b74aa0ad6789cd9f3e6d0c8a407df30954a8dc8aa
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '114'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '134'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Jul 2020 09:00:27 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=BCBCD58E57870487E5070FDB29221B18; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 7cd2262b9bb2f116de2e74d9d97ab5d1.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - mgvsp0vbbD1z-14G91GmR0fYmtk6P78-R6xYFEImQOOgy-iJxZuE0A==
+    body:
+      encoding: UTF-8
+      string: '{"code":-1102,"msg":"Mandatory parameter ''canTrade is not null|subAccountId
+        is not null'' was not sent, was empty/null, or malformed."}'
+  recorded_at: Wed, 29 Jul 2020 09:00:27 GMT
+- request:
+    method: post
+    uri: https://api.binance.com/sapi/v1/broker/subAccountApi
+    body:
+      encoding: UTF-8
+      string: recvWindow=5000&timestamp=1596013268000&signature=29156cd5993707402b8832bcdd7c3ee3a963b2c85f49273974357cab12dafb9a
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '114'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '134'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Jul 2020 09:01:08 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=041F983637039E133C4B5AE96FDA13BA; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 b3b1689b5de3293227c415784ed3c268.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - 8fQWTfGrK_SfZIyl1A8TSmVwDKUH9SXeFoID3DKY9bNLmZGn0Dy-zw==
+    body:
+      encoding: UTF-8
+      string: '{"code":-1102,"msg":"Mandatory parameter ''subAccountId is not null|canTrade
+        is not null'' was not sent, was empty/null, or malformed."}'
+  recorded_at: Wed, 29 Jul 2020 09:01:08 GMT
+recorded_with: VCR 6.0.0

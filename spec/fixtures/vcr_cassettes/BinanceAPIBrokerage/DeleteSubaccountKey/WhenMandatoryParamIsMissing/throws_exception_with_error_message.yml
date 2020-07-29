@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.binance.com/sapi/v1/broker/subAccountApi
+    body:
+      encoding: UTF-8
+      string: subAccountId=495279769361068032&recvWindow=5000&timestamp=1596048332000&signature=faa4d60146bd6d55d99d0de740afc7703f766dc08c5dfc36d82c1b7c7b78d303
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '146'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '117'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 29 Jul 2020 18:45:32 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=E5D999616B0ED1A35135786885D44EA0; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 dce4c8b7b9f77858bc00bb5154e30f3c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - TKofGPNDiSzTweiMUx-8FAaQcBxWpCfTpAQkY74cAEF5xtCNnBQnJg==
+    body:
+      encoding: UTF-8
+      string: '{"code":-1102,"msg":"Mandatory parameter ''subAccountApiKey is not
+        null'' was not sent, was empty/null, or malformed."}'
+  recorded_at: Wed, 29 Jul 2020 18:45:32 GMT
+recorded_with: VCR 6.0.0

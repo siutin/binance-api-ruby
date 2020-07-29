@@ -4,18 +4,24 @@ require 'binance_api/result'
 
 module BinanceAPI
   class Brokerage < BinanceAPI::Base
-    def create_subaccount(options = {})
-      params = base_params(options)
-
+    def create_subaccount(params = {})
+      params = map_params(params)
       process_request(:post, "#{BASE_URL}/sapi/v1/broker/subAccount", params)
     end
 
-    def get_subaccount(subaccount_id = nil, options = {})
-      params = base_params(options).merge(
-        subAccountId: subaccount_id
-      )
-
+    def get_subaccount(params = {})
+      params = map_params(params)
       process_request(:get, "#{BASE_URL}/sapi/v1/broker/subAccount", params)
+    end
+
+    def create_subaccount_key(params = {})
+      params = map_params(params)
+      process_request(:post, "#{BASE_URL}/sapi/v1/broker/subAccountApi", params)
+    end
+
+    def delete_subaccount_key(params = {})
+      params = map_params(params)
+      process_request(:delete, "#{BASE_URL}/sapi/v1/broker/subAccountApi", params)
     end
 
     protected
@@ -50,18 +56,24 @@ module BinanceAPI
     end
 
     def build_result(response)
-      json = JSON.parse(response.body, symbolize_names: true)
+      json = JSON.parse(response.body&.empty? ? '{}' : response.body, symbolize_names: true)
       BinanceAPI::Result.new(json, response.code == 200)
     end
 
-    def base_params(options)
+    def map_params(options)
       recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
       timestamp = options.delete(:timestamp) || Time.now
 
-      {
-        recvWindow: recv_window,
-        timestamp: timestamp.to_i * 1000
-      }
+      options.transform_keys! { |k| snake_case_to_camel_case(k) }
+
+      options.merge(recvWindow: recv_window, timestamp: timestamp.to_i * 1000)
+    end
+
+    def snake_case_to_camel_case(key)
+      ['_', '\s'].each do |s|
+        key = key.to_s.gsub(/(?:#{s}+)([a-z])/){ $1.upcase }
+      end
+      key.gsub(/(\A|\s)([A-Z])/){ $1 + $2.downcase }.to_sym
     end
   end
 end
