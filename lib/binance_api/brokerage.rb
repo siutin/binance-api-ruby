@@ -24,6 +24,11 @@ module BinanceAPI
       process_request(:delete, "#{BASE_URL}/sapi/v1/broker/subAccountApi", params)
     end
 
+    def deposit_history(params = {})
+      params = map_params(params)
+      process_request(:get, "#{BASE_URL}/sapi/v1/broker/subAccount/depositHist", params)
+    end
+
     protected
 
     def process_request(method, url, params)

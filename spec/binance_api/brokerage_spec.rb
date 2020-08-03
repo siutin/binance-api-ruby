@@ -205,4 +205,43 @@ RSpec.describe BinanceAPI::Brokerage, :vcr do
       end
     end
   end
+
+  describe '.deposit_history' do
+    let(:api_call) do
+      brokerage.deposit_history(params)
+    end
+
+    context 'when valid params' do
+      let(:subaccount_id) { '495279769361068032' }
+      let(:params) { { sub_account_id: subaccount_id } }
+
+      it 'returns result with expected keys' do
+        result = api_call
+        expect(result.value).to be_eql([])
+      end
+    end
+
+    context 'when invalid subaccount ID' do
+      let(:subaccount_id) { '-1' }
+      let(:params) { { sub_account_id: subaccount_id } }
+
+      it 'throws BinanceAPI::RequestError' do
+        expect { api_call }.to(
+          raise_error(BinanceAPI::RequestError)
+        )
+      end
+
+      it 'throws exception with error message and code' do
+        api_call
+      rescue => e
+        expect(e.message).to include('This two users are not in parent-child relation')
+      end
+
+      it 'throws exception with error code' do
+        api_call
+      rescue => e
+        expect(e.status).to eq(400)
+      end
+    end
+  end
 end

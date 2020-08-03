@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/sapi/v1/broker/subAccount/depositHist?recvWindow=5000&signature=1f2254fcba9474acfc540975d9c4a67cd59b7f54636b81ab526816101e950320&subAccountId=-1&timestamp=1596455511000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '71'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 03 Aug 2020 11:51:51 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=036765B17BBCAA5B6ACB2504B61E426F; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 9c157874a076ffdde5f5a44c4371f3a1.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - VIE50-C1
+      X-Amz-Cf-Id:
+      - EVAXkUke-qdyTJ9uIHsZdARZC2OFuNB1a4RotxTzfqL0Oy5nbyHarQ==
+    body:
+      encoding: UTF-8
+      string: '{"code":-9000,"msg":"This two users are not in parent-child relation."}'
+  recorded_at: Mon, 03 Aug 2020 11:51:51 GMT
+recorded_with: VCR 6.0.0
