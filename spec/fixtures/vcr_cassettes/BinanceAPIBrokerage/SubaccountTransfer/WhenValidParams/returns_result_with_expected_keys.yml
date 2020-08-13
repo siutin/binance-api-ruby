@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/sapi/v1/broker/transfer
+    body:
+      encoding: UTF-8
+      string: amount=0.01&toId=495279769361068032&asset=USDT&recvWindow=5000&timestamp=1597359572000&signature=5d1fe28e2b258eb4b1612e6d77f23c6e82ec92e48019ccb0b1d07ae10313cb63
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.3.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '161'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '21'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Aug 2020 22:59:33 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=B275ECE647C4EABDA3971C9C9C683261; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 269bfdd288bfea5423a4e9e701777da6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA53-C1
+      X-Amz-Cf-Id:
+      - GimYabBRTtvIrvptx_Qb2sUgnsPUO3BsMw3R3CRc6TCJT_SiqrFDHw==
+    body:
+      encoding: UTF-8
+      string: '{"txnId":10136131916}'
+  recorded_at: Thu, 13 Aug 2020 22:59:33 GMT
+recorded_with: VCR 6.0.0

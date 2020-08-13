@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/sapi/v1/broker/transfer
+    body:
+      encoding: UTF-8
+      string: amount=0.01&toId=495279769361068032&asset=NONAMECURRENCY&recvWindow=5000&timestamp=1597359720000&signature=77779870d49ddbe23db223552934b047f0b997b1bcc0de6bc6b8e0f0e84007e5
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.3.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '171'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '42'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Aug 2020 23:02:00 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=A1BDAAB20970E6190E5AD834398F6779; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 25ffb5a941b5a46b102cd385a9cdbb50.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA53-C1
+      X-Amz-Cf-Id:
+      - fRcqhY1FzqR3l1eiAbequIL7nk83eeG0bINEsNMP6_ImpyxkIY6vUw==
+    body:
+      encoding: UTF-8
+      string: '{"code":-9000,"msg":"asset is not exist "}'
+  recorded_at: Thu, 13 Aug 2020 23:02:00 GMT
+recorded_with: VCR 6.0.0

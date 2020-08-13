@@ -29,6 +29,11 @@ module BinanceAPI
       process_request(:get, "#{BASE_URL}/sapi/v1/broker/subAccount/depositHist", params)
     end
 
+    def subaccount_transfer(params = {})
+      params = map_params(params)
+      process_request(:post, "#{BASE_URL}/sapi/v1/broker/transfer", params)
+    end
+
     protected
 
     def process_request(method, url, params)

@@ -207,9 +207,7 @@ RSpec.describe BinanceAPI::Brokerage, :vcr do
   end
 
   describe '.deposit_history' do
-    let(:api_call) do
-      brokerage.deposit_history(params)
-    end
+    let(:api_call) { brokerage.deposit_history(params) }
 
     context 'when valid params' do
       let(:subaccount_id) { '495279769361068032' }
@@ -235,6 +233,46 @@ RSpec.describe BinanceAPI::Brokerage, :vcr do
         api_call
       rescue => e
         expect(e.message).to include('This two users are not in parent-child relation')
+      end
+
+      it 'throws exception with error code' do
+        api_call
+      rescue => e
+        expect(e.status).to eq(400)
+      end
+    end
+  end
+
+  describe '.subaccount_transfer' do
+    let(:api_call) { brokerage.subaccount_transfer(params) }
+    let(:subaccount_id) { '495279769361068032' }
+
+    context 'when valid params' do
+      let(:params) do
+        { amount: 0.01, to_id: subaccount_id, asset: 'USDT' }
+      end
+
+      it 'returns result with expected keys' do
+        result = api_call
+        expect(result.value.keys).to include(:txnId)
+      end
+    end
+
+    context 'when invalid params' do
+      let(:params) do
+        { amount: 0.01, to_id: subaccount_id, asset: 'NONAMECURRENCY' }
+      end
+
+      it 'throws BinanceAPI::RequestError' do
+        expect { api_call }.to(
+          raise_error(BinanceAPI::RequestError)
+        )
+      end
+
+      it 'throws exception with error message and code' do
+        api_call
+      rescue => e
+        expect(e.message).to include('asset is not exist')
       end
 
       it 'throws exception with error code' do
