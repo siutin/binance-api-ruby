@@ -4,6 +4,7 @@ require 'binance_api/rest'
 require 'binance_api/wapi'
 require 'binance_api/stream'
 require 'binance_api/brokerage'
+require 'binance_api/sapi'
 require 'yaml'
 
 module BinanceAPI
@@ -19,6 +20,10 @@ module BinanceAPI
 
     def brokerage
       @brokerage ||= BinanceAPI::Brokerage.new
+    end
+
+    def sapi
+      @sapi ||= BinanceAPI::SAPI.new
     end
 
     attr_writer :recv_window

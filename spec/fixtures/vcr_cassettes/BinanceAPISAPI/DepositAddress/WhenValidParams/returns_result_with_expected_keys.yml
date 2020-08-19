@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/sapi/v1/capital/deposit/address?coin=USDT&network=OMNI&recvWindow=5000&signature=0a986f0f854b1c09144943716565afc676ded2f9925bd90c1a780f4813b49177&timestamp=1597837982000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '152'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 19 Aug 2020 11:53:03 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=64870429F9AF1D21D28A7E27C7C964B8; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 8791078fc4adbfd0d41a1431725b690e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - kyHaKND3Qp0OHGVgZzEoVJeAPLBPRv5im7i17rLkpxEmMCk9bGSiFQ==
+    body:
+      encoding: UTF-8
+      string: '{"coin":"USDT","address":"1JyhhACyV3a9oJAqSpHzaKRRcaKRBP3p1J","tag":"","url":"https://www.omniexplorer.info/address/1JyhhACyV3a9oJAqSpHzaKRRcaKRBP3p1J"}'
+  recorded_at: Wed, 19 Aug 2020 11:53:03 GMT
+recorded_with: VCR 6.0.0
