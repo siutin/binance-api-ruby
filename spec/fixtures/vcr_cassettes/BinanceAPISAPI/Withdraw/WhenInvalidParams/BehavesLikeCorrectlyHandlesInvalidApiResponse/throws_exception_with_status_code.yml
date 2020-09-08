@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/sapi/v1/capital/deposit/address?coin=MYCOIN&recvWindow=5000&signature=c6f5dae1c70f35211c5b57063bdda5215477c8251064b02ea1311d72d111ef43&timestamp=1599545600000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.0.0 x86_64) ruby/2.6.3p62
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 08 Sep 2020 06:13:20 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - JSESSIONID=1B32645E074F463DAD46DC0FE091F444; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 8a90372b0bc378a280335b1e5010d8c4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - 4G3L0NiKuVDcMhwcrXOSUfGjvPdodDrJ4EXiBejpAxs6qJnJj-FAtw==
+    body:
+      encoding: UTF-8
+      string: '{"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}'
+  recorded_at: Tue, 08 Sep 2020 06:13:20 GMT
+recorded_with: VCR 6.0.0

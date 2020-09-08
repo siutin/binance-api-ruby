@@ -1,34 +1,47 @@
 require 'spec_helper'
 
 RSpec.describe BinanceAPI::SAPI, :vcr do
-  subject(:sapi_client) { BinanceAPI::SAPI.new }
+  subject(:subject) { BinanceAPI::SAPI.new }
 
   describe '.deposit_address' do
     context 'when valid params' do
       it 'returns result with expected keys' do
-        result = sapi_client.deposit_address(coin: 'USDT', network: 'OMNI')
+        result = subject.deposit_address(coin: 'USDT', network: 'OMNI')
         expect(result.value).to include(:address, :coin, :tag, :url)
       end
     end
 
     context 'when invalid params' do
-      it 'throws BinanceAPI::RequestError' do
-        expect { sapi_client.deposit_address(coin: 'MOJCOIN') }.to(
-          raise_error(BinanceAPI::RequestError)
+      it_behaves_like 'correctly handles invalid api response', :deposit_address
+    end
+  end
+
+  describe '.withdraw' do
+    context 'when valid params' do
+      # When executing without VCR this will send real funds
+      it 'returns result with Binance ID' do
+        result = subject.withdraw(
+          coin: 'ETH', address: '0xc457d6aD7A4B07839D7eD33C9a043eF4c34eEe4C', amount: '0.09'
         )
+        expect(result.value).to include(:id)
       end
+    end
 
-      it 'throws exception with error message' do
-        sapi_client.deposit_address(coin: 'MOJCOIN')
-      rescue => e
-        expect(e.message).to include('The deposit has been closed')
-      end
+    context 'when invalid params' do
+      it_behaves_like 'correctly handles invalid api response', :deposit_address
+    end
+  end
 
-      it 'throws exception with status code' do
-        sapi_client.deposit_address(coin: 'MOJCOIN')
-      rescue => e
-        expect(e.status).to eq(400)
+  describe '.withdraw_history' do
+    context 'when valid params' do
+      it 'returns results array with expected keys' do
+        result = subject.withdraw_history
+        expect(result.value[0]).to include(:id, :amount, :address, :coin, :network, :status, :txId)
       end
+    end
+
+    context 'when invalid params' do
+      it_behaves_like 'correctly handles invalid api response', :deposit_address
     end
   end
 end

@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/sapi/v1/capital/withdraw/history?recvWindow=5000&signature=8cf3fb18cc3957dfdbd5f44016adf667c5917ba4f6d10c36a86e411a69073ec2&timestamp=1599471280000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.0.0 x86_64) ruby/2.6.3p62
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 07 Sep 2020 09:34:40 GMT
+      Server:
+      - nginx
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - JSESSIONID=2031518A1551F22ACC94778B378802BD; Path=/; HttpOnly
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      Content-Encoding:
+      - gzip
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 77d8cf253666facea1bbe67902fcbbc1.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DUS51-C1
+      X-Amz-Cf-Id:
+      - O9UEeIrSGh0JsicsGcOcycFLhl4dpeAaNNiUXkjvlVqSYNo_N2fRfw==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA8VRTU8cMQz9K2jOsMq3nblRqVuoKiooUKGqh8Sxy5YyM5odxCLU/04C9FiJG1YOsZ/j9/zy47HblK7vSioZvEUick4pid5zDqRAlHMSdLffpdvxblhqr4XgVsGEoGpUYJnTsE20bMZhzVwb/KohLSpK42aotfXx15psl7Tcbbs+1HGlzLyt9wYBfbmxeTffX0+79dn6dC5jiXxxGKZv/uz3x+tP9tf3q8MLmT/A0eejES5PGu/uuEkPPkX0pnjQBDkIFTLCIqamDCanYhxHUuQFOCKwBmGL4MixaMx1UpqmPw/nm9sm3iijDhQeGL+nQu+gd235gZf7cb55Udu4287C8/nDVB+pv/uvPnpwRmdImE1xCU3kEGJg8Q5jCvxM9s9HNN6utFcaX5x6Zx+jkUIYrY6ISkcdCgeQ4rMGRE3JRSi2lkknnQSUydaTJEwaLaX68f/x0e4p7HU7b/Dx5xOumyZbkQIAAA==
+  recorded_at: Mon, 07 Sep 2020 09:34:40 GMT
+recorded_with: VCR 6.0.0
