@@ -71,6 +71,13 @@ stream = BinanceAPI::Stream.new(['bnbbtc@aggTrade', 'bnbbtc@trade'], on_message:
 
 ```
 
+### Using Proxy
+
+You can use proxy parameter:
+
+- In initializer in every module inherited from BinanceAPI::Base: BinanceAPI::Brokerage, BinanceAPI::REST, BinanceAPI::SAPI, BinanceAPI::WAPI
+- In params of every method of these modules
+
 ## Structure
 
 API | Class

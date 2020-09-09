@@ -32,6 +32,6 @@ module BinanceAPI
       @recv_window || 5000
     end
 
-    attr_accessor :api_key, :api_secret
+    attr_accessor :api_key, :api_secret, :proxy
   end
 end
