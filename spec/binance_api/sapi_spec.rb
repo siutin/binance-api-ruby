@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'spec_helper'
 
 RSpec.describe BinanceAPI::SAPI, :vcr do
@@ -28,7 +30,7 @@ RSpec.describe BinanceAPI::SAPI, :vcr do
     end
 
     context 'when invalid params' do
-      it_behaves_like 'correctly handles invalid api response', :deposit_address
+      it_behaves_like 'correctly handles invalid api response', :withdraw
     end
   end
 
@@ -41,7 +43,23 @@ RSpec.describe BinanceAPI::SAPI, :vcr do
     end
 
     context 'when invalid params' do
-      it_behaves_like 'correctly handles invalid api response', :deposit_address
+      it_behaves_like 'correctly handles invalid api response', :withdraw_history
+    end
+  end
+
+  describe '.coins_config' do
+    context 'when valid params' do
+      it 'returns results array with expected keys' do
+        result = subject.coins_config
+        expect(result.value.first.keys).to include(
+          :coin, :depositAllEnable, :withdrawAllEnable, :name, :free, :locked, :freeze,
+          :withdrawing, :ipoing, :ipoable, :storage, :isLegalMoney, :trading, :networkList
+        )
+      end
+    end
+
+    context 'when invalid params' do
+      it_behaves_like 'correctly handles invalid api response', :coins_config
     end
   end
 end

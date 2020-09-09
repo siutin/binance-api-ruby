@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'rest-client'
 require 'date'
 require 'uri'
@@ -5,6 +7,7 @@ require 'json'
 require 'binance_api/result'
 
 module BinanceAPI
+  # Base API client
   class Base
     BASE_URL = 'https://api.binance.com'.freeze
 

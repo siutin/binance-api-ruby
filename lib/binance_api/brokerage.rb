@@ -1,8 +1,11 @@
+# frozen_string_literal: false
+
 require 'rest-client'
 require 'binance_api/base'
 require 'binance_api/result'
 
 module BinanceAPI
+  # Brokerage API client
   class Brokerage < BinanceAPI::Base
     def create_subaccount(params = {})
       params = map_params(params)

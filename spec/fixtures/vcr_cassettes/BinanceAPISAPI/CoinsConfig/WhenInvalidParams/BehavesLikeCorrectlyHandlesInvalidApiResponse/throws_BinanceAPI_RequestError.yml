@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.binance.com/sapi/v1/capital/withdraw/apply
+    method: get
+    uri: https://api.binance.com/sapi/v1/capital/config/getall?coin=MYCOIN&recvWindow=5000&signature=c3147e4df0258a926fda2956c376b979fbf4d2c0c3ce77471d2b8c29c8dc9a8d&timestamp=1599662189000
     body:
-      encoding: UTF-8
-      string: coin=MYCOIN&recvWindow=5000&timestamp=1599662273000&signature=de8e2c03c7df7192a34af2a61b01dd28885975c62deda65f0f1319bfaa458243
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - "*/*"
@@ -15,10 +15,6 @@ http_interactions:
       - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
       X-Mbx-Apikey:
       - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
-      Content-Length:
-      - '126'
-      Content-Type:
-      - application/x-www-form-urlencoded
       Host:
       - api.binance.com
   response:
@@ -33,11 +29,11 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 09 Sep 2020 14:37:53 GMT
+      - Wed, 09 Sep 2020 14:36:29 GMT
       Server:
       - nginx
       Set-Cookie:
-      - JSESSIONID=24BBB99703F64624576D65E97371F1E7; Path=/; HttpOnly
+      - JSESSIONID=830170B18630D27D251D413526116CB7; Path=/; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains
       X-Frame-Options:
@@ -61,13 +57,13 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 4c7664383840971890a08804c2d41e86.cloudfront.net (CloudFront)
+      - 1.1 c60880d44880ad913f911851a63aacdf.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - WAW50-C1
       X-Amz-Cf-Id:
-      - Vu5eiB-E8nclgztFfF7G-j5RAaQ0z1sY7gvom82XvA06cAi6Xsn0sA==
+      - xF_pstTu0NGqyLEFVxknBhYR3cOb-zYmkZo0y7Ti4otVhet1w5JpxA==
     body:
       encoding: UTF-8
       string: '{"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}'
-  recorded_at: Wed, 09 Sep 2020 14:37:54 GMT
+  recorded_at: Wed, 09 Sep 2020 14:36:29 GMT
 recorded_with: VCR 6.0.0

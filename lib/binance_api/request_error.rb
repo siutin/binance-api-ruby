@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module BinanceAPI
   class RequestError < StandardError
     attr_reader :status, :message

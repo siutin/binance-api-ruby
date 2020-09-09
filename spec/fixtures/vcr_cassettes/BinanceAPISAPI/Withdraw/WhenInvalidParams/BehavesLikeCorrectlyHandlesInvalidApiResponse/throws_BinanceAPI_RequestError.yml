@@ -1,20 +1,24 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.binance.com/sapi/v1/capital/deposit/address?coin=MYCOIN&recvWindow=5000&signature=410fe185367ed311a9836932c62b3e694e6003f144bf5d14e86f96bb8a0755d2&timestamp=1599545599000
+    method: post
+    uri: https://api.binance.com/sapi/v1/capital/withdraw/apply
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: coin=MYCOIN&recvWindow=5000&timestamp=1599662273000&signature=de8e2c03c7df7192a34af2a61b01dd28885975c62deda65f0f1319bfaa458243
     headers:
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin19.0.0 x86_64) ruby/2.6.3p62
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
       X-Mbx-Apikey:
       - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '126'
+      Content-Type:
+      - application/x-www-form-urlencoded
       Host:
       - api.binance.com
   response:
@@ -29,11 +33,11 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 08 Sep 2020 06:13:19 GMT
+      - Wed, 09 Sep 2020 14:37:53 GMT
       Server:
       - nginx
       Set-Cookie:
-      - JSESSIONID=7DC4A1673ADA80376268CA579D8D0452; Path=/; HttpOnly
+      - JSESSIONID=CA21988C1F931EA519FE484518BB7FA7; Path=/; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains
       X-Frame-Options:
@@ -57,13 +61,13 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 a05b3de6d2658c4fd69effef7a8348e4.cloudfront.net (CloudFront)
+      - 1.1 50f21cb925e6471490e080147e252d7d.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - WAW50-C1
       X-Amz-Cf-Id:
-      - Gk5na9mNKW7RUP-zNmJlfWqDpnS_GKVj0658jvN4IlMNLAEid-sz0Q==
+      - kugDOtGnTKqEMZkQJRwraPHTmpB3BQq8atgPWlqZ2-FNElfaomY3QA==
     body:
       encoding: UTF-8
       string: '{"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}'
-  recorded_at: Tue, 08 Sep 2020 06:13:19 GMT
+  recorded_at: Wed, 09 Sep 2020 14:37:53 GMT
 recorded_with: VCR 6.0.0

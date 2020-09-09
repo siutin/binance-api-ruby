@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.binance.com/sapi/v1/capital/deposit/address?coin=MYCOIN&recvWindow=5000&signature=755539e00a86022bb65bf1c7a79f837b001be494e8c37f45589306caa4f1583a&timestamp=1599545601000
+    uri: https://api.binance.com/sapi/v1/capital/withdraw/history?coin=MYCOIN&recvWindow=5000&signature=2bdb27228a3c50a537f5f4b9ff7d3d2a996acabae61a39631178e6f16ca642d4&timestamp=1599662274000
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin19.0.0 x86_64) ruby/2.6.3p62
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
       X-Mbx-Apikey:
       - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
       Host:
@@ -29,11 +29,11 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 08 Sep 2020 06:13:21 GMT
+      - Wed, 09 Sep 2020 14:37:55 GMT
       Server:
       - nginx
       Set-Cookie:
-      - JSESSIONID=E73B51889371C8B46B03023B7C86A352; Path=/; HttpOnly
+      - JSESSIONID=9AC2F8457074CF576ED8A59772192F92; Path=/; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains
       X-Frame-Options:
@@ -57,13 +57,13 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 f62050e21268ac5026b6ccb68a1f0a2b.cloudfront.net (CloudFront)
+      - 1.1 5e71ebbd3e768e1e564c88b3632039d8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - WAW50-C1
       X-Amz-Cf-Id:
-      - ydVFjE9XQ5ZJSVvnjP9nasI25_o-0n7kynQZ8S0Zwxclp6OwTh-Ecw==
+      - Q-aE_r8RMO8GtZ24aiEWVCBR8tg3w1atHo4yNclSuFcpgF3UUxzzgw==
     body:
       encoding: UTF-8
       string: '{"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}'
-  recorded_at: Tue, 08 Sep 2020 06:13:21 GMT
+  recorded_at: Wed, 09 Sep 2020 14:37:55 GMT
 recorded_with: VCR 6.0.0

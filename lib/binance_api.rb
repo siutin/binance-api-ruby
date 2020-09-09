@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'binance_api/version'
 require 'binance_api/request_error'
 require 'binance_api/rest'
@@ -7,9 +9,9 @@ require 'binance_api/brokerage'
 require 'binance_api/sapi'
 require 'yaml'
 
+# BinanceAPI client builders
 module BinanceAPI
   class << self
-
     def rest
       @rest ||= BinanceAPI::REST.new
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'websocket-client-simple'
 module BinanceAPI
   class Stream

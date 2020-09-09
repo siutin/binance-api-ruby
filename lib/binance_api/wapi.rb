@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'rest-client'
 require 'binance_api/base'
 require 'binance_api/result'
@@ -130,7 +132,7 @@ module BinanceAPI
 
     def system_status
       response = safe { RestClient.get("#{BASE_URL}/wapi/v3/systemStatus.html") }
-      
+
       json = JSON.parse(response.body, symbolize_names: true)
       BinanceAPI::Result.new(json, response.code == 200)
     end
@@ -141,6 +143,6 @@ module BinanceAPI
       json = JSON.parse(response.body, symbolize_names: true)
       BinanceAPI::Result.new(json, response.code == 200 && json.fetch(:success, false))
     end
-    
+
   end
 end

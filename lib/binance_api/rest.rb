@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'rest-client'
 require 'date'
 require 'uri'
