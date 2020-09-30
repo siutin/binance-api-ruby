@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/api/v3/account?recvWindow=5000&signature=81f20e8027cc30fe1ae7048669afcc9f294a3440021a51c496dd3ed2e8bc4f88&timestamp=1601463163000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.3.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1449'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Sep 2020 10:52:43 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - 46b5eafe-1e3d-4bb6-bd2f-795e4c12cd09
+      X-Mbx-Used-Weight:
+      - '5'
+      X-Mbx-Used-Weight-1m:
+      - '5'
+      Content-Encoding:
+      - gzip
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4bd30f064fa59199939550d08d8ddafb.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DUB2-C1
+      X-Amz-Cf-Id:
+      - 18f8yUpFrkfQ_aQOfsmj4ZDXCW5emcKoXJiihOqVIaS7ZER8j4G4Qw==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAA/6WcW08jNxTHv8s8I5QAIbBvHo8z482MPdieC6n2IYVURctNSVC1Wu13r9OlKmSrNvsb3nA4HF/+538uPs7X5GH5ebWWTw8Pd5vN3dNj8mE8Okq2/zb468uX94NxbLO6v/9h8Gb5GNbL21XyYbt+Wf31e3e3/f12vfzjzVC2en7a3G3/Hnl5vl1uV+HuIYqNz0fj08vxycX05HJylCxvbp5eHrfhy3P8LPG1DUmczfJ++Xiz2iQffvmaLDebVfxPSRpk/Oi39Wr3h6Pj0eh0ej4ZjeLY/dPN59Xt6+j3n+Tb0T+S5b7k69/8v6QKxVvJ8dno5HJ6MTlA0igLdaYmhZJXoanoQq2Hkt4EvFAqmQs621RSKDQ+ezPds4vJ5PhicnmodOEd1GtFDyUzvL+VpODV0kDJhaPrtFUOJTtMDNf2mm5R6ajSgLfIm7zEBh6cwCZ+RWc8ayiQ5obur8zoOvuWQlDbIPChUrYvtZnTPWoxejEdOVVTIsvo5lahpMciSrpQ03ArbWjU4AO10ep9dPQTkiKjOhWP5Qy10YWiOoXHIQ62lizPKFtjns+Ep1CobUdDozTQE3XqijJ9RWerWor5VlPbVuYj1amo/xWO+pbeYZ63FPM+WEf3aF5RrQ6HySqjcWcmcKSRYY9WCUOV1jWOFzK6u3lP/a+oqI0KR2ebSrxF0lDo5i3VWVuFiZ4ey6xRNI7rF9TrX3nKY6Wn3JlKeqAB15sEjq5LhfHXlzTrkRVFbidaRRHYiVRTUwu8DIOLKThiVeWM4khbSoGdNjmuBTqKQaNSyipGtDwKpPxZ4mJKcJrG2KKucSGmwJmIK6lSbSiQao1De83tzQelKBUaYSi1CArCVlNvkZYLukfX9ExdTY/UyCHJMN0ji+sFC40rXTF3ogjsMXY7gZ1FTXP3K8wquaMIlKUVNBosraXbm+LUNDT+jUM9Oz8+nR4su8DlBj+/pvMtFM6ItcVV06s5ribmNJI0OK/1dLKmxjrnih6pwRfD1QzXPhWmXk2rkMJllMoKS2fbKrxFVlImq21JwdCGggY5Ft8V1AXlhQK7GLrKGrcWuJbSdSYpcKN3oTtUaXxTlcZcJKV6o7Cn6Z7DHjEN1E7jFuNCGyaHMKBGJ1VJ4VSJoLEjDji8qgtabbOGZl6zgIPBIOl0d1iisrKgCZ/EfWyixDyqcCEpszmuiecprTJnDS4zCzOnBtfpIYkFhpLlkKiVo8QUCQL3f75Lo8an0+nxZHx2enF+mLTAlfVUCcoTRSooLPpAbd3kOAjJKZzMHF8tYnNVDd3buWhpgutwP1EjcFeQq+l0g6NZggz9gPAOT9firEYHHgfQGE00lFQsN1Le9pc2JSXuSIK4wScUAxTvpLnu3tUDdO+kB6zb+iHrjtJcd5D4Thc3U5f4WnaB11nhC0dpA60apnPXUVGTDjHCKM0xUeiWMqQPuKPGW7panbk9pftCew7L0wOVBW+1lA1m4yAz21E3UODq6kd8tTrTOHjX+4XZ/zxLHyrcfI0fK9R4R6WtKAi007g0j1NO39PpeoNfXQlqnTECwDYWZQfYmMgE1hxlB2jevUTBqnfCA3Rn+CbENbgWF10bJ1KTDlhuTLSx5ig7BF44C00FdarXM2qGHvc0CE6sjl4TeF7vsVLhVgqDn0GUDe4I15nCF1b4/W0tevy81PQUSsHhJx95iQuA/A1u98Pr/INF555ukm98Qa088gMVzXgjG77oaiqqM+bXmPaD63lEYv0AlxE1D3F1ruauztXDYgqsOcoO0GxS3KGucbeD77DjKgdklOWgjFI6ftHRGMoatseVBdy9HQMvSuhp43KFqwVijmvU+HmHl/tllMMRwefra+FwF2FEE7aBKDvABuzPPTr7dJQ8r9av3wO0+1qe79/U8+nbn3kf3vFkSAAA
+  recorded_at: Wed, 30 Sep 2020 10:52:44 GMT
+recorded_with: VCR 6.0.0

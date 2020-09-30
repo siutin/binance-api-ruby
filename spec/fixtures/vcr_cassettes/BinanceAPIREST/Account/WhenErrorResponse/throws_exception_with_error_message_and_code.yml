@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/api/v3/account?recvWindow=5000&signature=eaac8dec00809281f99da5a4a39096a7ac52edabcdbcdd745b42083306ac7151&timestamp=1601463164000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.3.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '63'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Sep 2020 10:52:45 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - abd388d9-e996-4d9d-b4a8-65320749e1e7
+      X-Mbx-Used-Weight:
+      - '10'
+      X-Mbx-Used-Weight-1m:
+      - '10'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 ed03f18c47649fd55292e71a1aea7064.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DUB2-C1
+      X-Amz-Cf-Id:
+      - JM6qSwuV1TBY8QAV1qWCG4F5EWHuIF04PXolePXTZdqAKBBC-AdMaA==
+    body:
+      encoding: UTF-8
+      string: '{"code":-1022,"msg":"Signature for this request is not valid."}'
+  recorded_at: Wed, 30 Sep 2020 10:52:45 GMT
+recorded_with: VCR 6.0.0

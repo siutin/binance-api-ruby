@@ -9,6 +9,11 @@ require 'binance_api/result'
 
 module BinanceAPI
   class REST < BinanceAPI::Base
+    def account(params = {})
+      params = map_params(params)
+      process_request(:get, "#{BASE_URL}/api/v3/account", params)
+    end
+
     def ping
       response = safe { RestClient.get("#{BASE_URL}/api/v1/ping") }
       build_result response
@@ -228,25 +233,6 @@ module BinanceAPI
 
       response = safe do
         RestClient.get "#{BASE_URL}/api/v3/allOrders",
-                       params: params_with_signature(params, api_secret),
-                       'X-MBX-APIKEY' => api_key
-      end
-
-      build_result response
-    end
-
-
-    def account(options = {})
-      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
-      timestamp = options.delete(:timestamp) || Time.now
-
-      params = {
-          recvWindow: recv_window,
-          timestamp: timestamp.to_i * 1000 # to milliseconds
-      }
-
-      response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/account",
                        params: params_with_signature(params, api_secret),
                        'X-MBX-APIKEY' => api_key
       end
