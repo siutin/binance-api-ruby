@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/api/v3/allOrders?recvWindow=5000&signature=37ffaac9b734347150c00f944df0b59d43a170b58bd8a4dcfdaba196229e87db&symbol=ETHUSDT&timestamp=1601585262000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '406'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 01 Oct 2020 20:47:42 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - f8ab8321-00f9-4e10-b663-afbf3a357f79
+      X-Mbx-Used-Weight:
+      - '5'
+      X-Mbx-Used-Weight-1m:
+      - '5'
+      Content-Encoding:
+      - gzip
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6c75f370e2f32e8fc940abded097e39c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR61-C2
+      X-Amz-Cf-Id:
+      - fASt_01yAJTR6G_q9hmp1eQSHx1CxYtL7d3I1O_-KM9Wk0BVGS-mHg==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAA/+WTW0/CMBiG/0uvkbRb1wN3HAZOhgqb8RRj2FZJkTGydSox/ne7iTgQ4yle2bvvfb98pye9fATZMg6SGWgA298/8To+qIEkjUTqRKCBCKOIm5gbK9GVmSqMPVQD4UyKuTp6zQX3Irg2LENQFCFMiYmpdcN5YCLOzXDMOAtYqIsvUhkKna79OuewfGVPORmqpTZgHcG1LB5EmCsR7bDCPI7z2VjJOzHMEyVeUkxcJ4y85mRqrPJMy13Hde2OVpSMhTPvJmk5RM9vF9pyUQSuM3CK9TMZFWHr5LyskCyOVyPDOnxrr6VApOuZK07RQt/O4hxThA2DYlID+SIaK+HvsmR2mqS3cj4BDZXmYnWLYqXyuO86PNU+ocYQNRk1GP0CtSZsHnstNkJ53PN8EqFTPyK0wmljtSoliD+kVLF2U0KaEmX4J5QGzVHfrmDybNf9FScCkWVRi3LMjC1Om9YfcTKNr3CaTgb9i8G0fYDszD1znUNiWrTzDzkxiPj2f9q0vs3p6hnUDLnhBwUAAA==
+  recorded_at: Thu, 01 Oct 2020 20:47:42 GMT
+recorded_with: VCR 6.0.0

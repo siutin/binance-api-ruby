@@ -40,7 +40,7 @@ module BinanceAPI
       params.merge(signature: signature)
     end
 
-    def process_request(method, url, params)
+    def process_request(method, url, params = {})
       response = make_request(method, url, params)
       validate_response(response)
       build_result response

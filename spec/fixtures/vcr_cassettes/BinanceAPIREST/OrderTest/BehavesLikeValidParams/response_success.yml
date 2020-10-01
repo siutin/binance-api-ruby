@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/api/v3/order/test
+    body:
+      encoding: UTF-8
+      string: symbol=BTCUSDT&type=MARKET&side=SELL&quantity=10.0&recvWindow=5000&timestamp=1601479796000&signature=bba9107b3ba1e2ac6b1cda265b4a88b05fc352841e06fd5632a08d30d1b63202
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '165'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Sep 2020 15:29:57 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - 623381eb-85ad-493f-a2af-52acf58690b5
+      X-Mbx-Used-Weight:
+      - '1'
+      X-Mbx-Used-Weight-1m:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ab7ef1002486648bddb0e6bc684500bd.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR62-C4
+      X-Amz-Cf-Id:
+      - "-ii0NqU25z3zO_akIxif3kj6lx5NoF_gxnik7sDbaQOlpeY2hLkv5g=="
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 30 Sep 2020 15:29:57 GMT
+recorded_with: VCR 6.0.0

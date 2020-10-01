@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/api/v1/ping
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Sep 2020 19:11:25 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - deaec5ee-1377-43fa-b31a-3a9b5fe3dcdd
+      X-Mbx-Used-Weight:
+      - '2'
+      X-Mbx-Used-Weight-1m:
+      - '2'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1064639c622430d6b0382968293fd56e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR62-C4
+      X-Amz-Cf-Id:
+      - KWOEJn_QqhA63qhbQYuO4hFGLupRh2oZbhQf6XKubAjf7bmEROBhKw==
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 30 Sep 2020 19:11:25 GMT
+recorded_with: VCR 6.0.0

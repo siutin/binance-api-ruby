@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/api/v3/order
+    body:
+      encoding: UTF-8
+      string: symbol=ETHUSDT&type=MARKET&side=SELL&quantity=0.04&recvWindow=5000&timestamp=1601557579000&signature=5b18a726f2d5e13b4423641061b05f603ee51384fe75e26e6a418631122803cd
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '165'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '286'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 01 Oct 2020 13:06:20 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - 0bac9c75-3944-4dd8-a1a3-5ed034315466
+      X-Mbx-Used-Weight:
+      - '2'
+      X-Mbx-Used-Weight-1m:
+      - '2'
+      X-Mbx-Order-Count-10s:
+      - '1'
+      X-Mbx-Order-Count-1d:
+      - '2'
+      Content-Encoding:
+      - gzip
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 f2f4b0ff6700ebb706d2d2b8fa38fac9.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - QRO50-C1
+      X-Amz-Cf-Id:
+      - F8R0OrXXSmuGbHd1_tdoZJqb5yjdb2DzeDhtuE5h3khzzk_8udUMpA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAA/22RXU+DMBSG/0uvkVAKLexu2ZjiimYOE6PxAqEuXSidtBjJsv9uC0hisnP3fuTkyTlnoHrxIWuwAEl+97xf58ABsq1Ym1ZgASNIUESQTyaTcqVtcAMdUNacNfrxrwuOh2z7mh1X9zBR9IWmDxiFZG3W6bZoVFHqnAtmdmIPhiEJIw/G2AGnlpfGBZ7rTTMA8MNO96MdzDb7YWWnWXUlKjshurrQ/JvtOqnZWIGBi0kUTB2lC90pY29SSpOBzBClzUa2A8JtvrJef7IiWz5tE3sMxSur9wmlRn3yujYr3s4zOMLYjfEM8nWFTQrBleKyGRMYDFD/kqVSTJt4+oA5WcWGD8TID5Afe5f3yy8ZEPhdrAEAAA==
+  recorded_at: Thu, 01 Oct 2020 13:06:20 GMT
+recorded_with: VCR 6.0.0

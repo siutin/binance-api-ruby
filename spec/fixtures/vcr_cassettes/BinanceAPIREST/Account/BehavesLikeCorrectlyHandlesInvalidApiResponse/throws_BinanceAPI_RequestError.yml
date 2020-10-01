@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/api/v3/account?coin=MYCOIN&recvWindow=5000&signature=5a97879d88102069cb66028e73013ca898817f9b392650479421e5de2b9faf27&timestamp=1601884746000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZzz
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 05 Oct 2020 07:59:06 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - 623381eb-85ad-493f-a2af-52acf58690b5
+      X-Mbx-Used-Weight:
+      - '5'
+      X-Mbx-Used-Weight-1m:
+      - '5'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 812340d4e76cb03e2d09a3ae9f9fd8b8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR3-C2
+      X-Amz-Cf-Id:
+      - bI5iuqJL-NYvrGcxJx4Dp1bFZyUU5a6FWdftSP6JT87B-7sFCuFfKQ==
+    body:
+      encoding: UTF-8
+      string: '{"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}'
+  recorded_at: Mon, 05 Oct 2020 07:59:06 GMT
+recorded_with: VCR 6.0.0

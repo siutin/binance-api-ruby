@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/api/v3/account?recvWindow=5000&signature=230f685d8157b5996ce09c0586cda114472ca1f788a0761f4162b60584701fb7&timestamp=1601586321000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1452'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 01 Oct 2020 21:05:21 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - 4dbfb4f5-c2a7-407b-b8b9-b514ea21df30
+      X-Mbx-Used-Weight:
+      - '5'
+      X-Mbx-Used-Weight-1m:
+      - '5'
+      Content-Encoding:
+      - gzip
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 844d5b01ddfb78394a58dcebfe6281c5.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR61-C2
+      X-Amz-Cf-Id:
+      - 53o5RSxIvOal98k9oqmUxLK5C2120loOFjwNw93Ozx18Bv7WC_368w==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAA/6Wc224bNxCG32WvDUOKLcnJHZdL7TLaJdck92AVuVBtFTXiEyQZRRDk3UM1LmorRat+6ztTHg8P//xz4FBfk/vV5/VGPt7f3263t48PyYfx6CTZ/dPgr89f3g7Gse367u6nwevVQ9isbtbJh93mef3n793t7vebzeqPV0PZ+ulxe7v7a+T56Wa1W4fb+yg2no7Gk8lscjEav5+eJKvr68fnh1348hQ/S3xtQxJns7pbPVyvt8mHX74mq+12Hf9TkgYZP/pts97/4eh0NDqbTSejURy7e7z+vL55Gf3xk3w7+VuyPJR8+Zv/llSheCM5Hb17P7uYHCFplIU6U5NCycvQVHSh1kNJbwJeKJXMBZ1tKikUGp+9mu755GJyOr6Ynp+fvTtGuvAO6rWih5IZ3t9KUvBqaaDk0tF12iqHkh0mhit7RbeodFRpwFvkTV5iAw9OYBO/pDOeNxRIC0P3V2Z0nX1LIahtEPhQKduX2izoHrUYvZiOnKopkWV0c6tQ0mMRJV2oabiVNjRq8IHaaHUQHR0vKTKqU/FYzlAbXSqqU3gc4mBryfKMsjXm+Ux4CoXadjQ0SgM9UacuKdNXdLaqpZhvNbVtZT5SnYr6X+Gob+kd5nlLMe+DdXSPFhXV6nCYrDIad2YCRxoZ9miVMFRpXeN4IaO7m/fU/4qK2qhwdLapxFskDYVu3lKdtVWY6OmxzBtF47h+Sb3+pac8VnrKnamkBxpwvUng6LpUGH99SbMeWVHkdqJVFIGdSDU1tcDLMLiYgiNWVc4pjrSlFNhpk+NaoKMYNCqlrGJEy6NAyp8lLqYEp2mMLeoaF2IKnIm4kirVhgKp1ji019zefFCKUqERhlKLoCBsNfUWabmke3RFz9TV9EiNHJIM0z2yuF6w1LjSFXMnisAeY7cT2FnUNHe/xKySO4pAWVpBo8HSWrq9KU5NQ+NfOdTz6enZ7GjZJS43+MUVnW+hcEasLa6aXi5wNTGnkaTBea2nkzU11rlQ9EgNvhiu5rj2qTD1alqFFC6jVFZYOttW4S2ykjJZbUsKhjYUNMix+K6gLigvFNjF0FXWuLXAtZSuM0mBG70L3aFK45uqNOYiKdUbhT1N9xz2iGmgdhq3GBfaMDmEATU6qUoKp0oEjR1xwOFVXdBqmzU085oHHAwGSae7xxKVlQVN+CTuYxMl5lGFC0mZzXFNPE9plTlrcJlZmAU1uE4PSSwwlCyHRK0cJaZIELj/800aNT6bzU4n4/Ozi+lx0gJX1lMlKE8UqaCw6AO1dZPjICSncDILfLWIzVU1dG8XoqUJrsP9RI3AXUGuptMNjmYJMvQDwjs8XYuzGh14HEBjNNFQUrHcSHnbX9qUlLgjCeIGn1AMULyX5rp7Vw/QvZcesG7rh6w7SnPdQeI7XdxMXeJr2SVeZ4UvHKUNtGqYLlxHRU06xAijNMdEoVvKkD7gjhpv6Wp15g6UHgodOCxPD1QWvNVSNpiNg8xsR91AgaurH/HV6lzj4F0fFmb/9Sx9qHDzNX6sUOMdlbaiINBO49I8Tjl9T6frDX51Jah1xggA21iUHWBjIhNYc5QdoHn/EgWr3gsP0J3hmxDX4FpcdG2cSE06YLkx0caao+wQeOEsNBXUqV7NqRl63NMgOLE6ek3geb3HSoVbKQx+BlE2uCNcZwpfWOH3t7Xo8fNS01MoBYeffOQlLgDyN7jdT6/zjxZdeLpJvvEFtfLID1Q0441s+KKrqajOmF9j2g+u5xGJ9QNcRtQ8xNW5mrs6Vw+LKbDmKDtAs0lxh7rG3Q6+w46rHJBRloMySun4RUdjKGvYHlcWcPd2DLwooaeNyxWuFogFrlHj5x1eHpZRjkcEn6+vhcNdhBFN2Aai7AAbsP/v0dmnk+RpvXn5HqD91/L8+KaeT9++AzpyYMxkSAAA
+  recorded_at: Thu, 01 Oct 2020 21:05:21 GMT
+recorded_with: VCR 6.0.0

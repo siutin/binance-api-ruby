@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.binance.com/api/v3/order/test
+    body:
+      encoding: UTF-8
+      string: coin=MYCOIN&recvWindow=5000&timestamp=1601480371000&signature=f808cc5e5087a6ba31b5877b25ce0c6e5522d86087ddbd362bd180dfed9c7075
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZzz
+      Content-Length:
+      - '126'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Sep 2020 15:39:31 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - 623381eb-85ad-493f-a2af-52acf58690b5
+      X-Mbx-Used-Weight:
+      - '3'
+      X-Mbx-Used-Weight-1m:
+      - '3'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 c5b4348a0bb5daaef6e0b0e13b317635.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR62-C4
+      X-Amz-Cf-Id:
+      - fXLt7sW18xsoasV2VIUjmU7gjdAy95hzNCzMUb58UafrZumfIKnxaA==
+    body:
+      encoding: UTF-8
+      string: '{"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}'
+  recorded_at: Wed, 30 Sep 2020 15:39:31 GMT
+recorded_with: VCR 6.0.0

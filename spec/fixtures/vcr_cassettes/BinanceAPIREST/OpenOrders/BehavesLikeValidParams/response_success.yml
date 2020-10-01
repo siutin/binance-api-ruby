@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/api/v3/openOrders?recvWindow=5000&signature=83f74a1b6463013fdbb358a1d3c52723d03faea358db768ab640d8acd5cbeea8&timestamp=1601584894000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 01 Oct 2020 20:41:35 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - f8ab8321-00f9-4e10-b663-afbf3a357f79
+      X-Mbx-Used-Weight:
+      - '40'
+      X-Mbx-Used-Weight-1m:
+      - '40'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2ef602bfa230d0b0e1ca0a28f22a91c9.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR61-C2
+      X-Amz-Cf-Id:
+      - jEjBDBbheGeAkkfmrE1ht7kQmvoeT_dGbY9xnVLAER2GxIkE0MRP6w==
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Thu, 01 Oct 2020 20:41:35 GMT
+recorded_with: VCR 6.0.0

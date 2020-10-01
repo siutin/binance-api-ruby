@@ -89,155 +89,34 @@ module BinanceAPI
       build_result response
     end
 
-    # {
-    #     symbol: 'LTCBTC',
-    #     side: 'BUY',
-    #     type: 'LIMIT',
-    #     timeInForce: 'GTC',
-    #     quantity: 1,
-    #     price: 0.1,
-    #     recvWindow: BinanceAPI.recv_window,
-    #     timestamp: 1499827319559
-    # }
-
-    def order(symbol, side, type, quantity, options = {})
-      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
-      timestamp = options.delete(:timestamp) || Time.now
-
-      params = {
-          symbol: symbol,
-          side: side,
-          type: type,
-          timeInForce: options.fetch(:time_in_force, nil),
-          quantity: quantity,
-          price: options.fetch(:price, nil),
-          newClientOrderId: options.fetch(:new_client_order_id, nil),
-          stopPrice: options.fetch(:stop_price, nil),
-          icebergQty: options.fetch(:iceberg_qty, nil),
-          newOrderRespType: options.fetch(:new_order_resp_type, nil),
-          recvWindow: recv_window,
-          timestamp: timestamp.to_i * 1000 # to milliseconds
-      }
-
-      response = safe do
-        RestClient.post "#{BASE_URL}/api/v3/order",
-                        params_with_signature(params, api_secret),
-                        'X-MBX-APIKEY' => api_key
-      end
-
-      build_result response
+    def order(params = {})
+      params = map_params(params)
+      process_request(:post, "#{BASE_URL}/api/v3/order", params)
     end
 
-    def order_test(symbol, side, type, quantity, options = {})
-      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
-      timestamp = options.delete(:timestamp) || Time.now
-
-      params = {
-        symbol: symbol,
-        side: side,
-        type: type,
-        timeInForce: options.fetch(:time_in_force, nil),
-        quantity: quantity,
-        price: options.fetch(:price, nil),
-        newClientOrderId: options.fetch(:new_client_order_id, nil),
-        stopPrice: options.fetch(:stop_price, nil),
-        icebergQty: options.fetch(:iceberg_qty, nil),
-        newOrderRespType: options.fetch(:new_order_resp_type, nil),
-        recvWindow: recv_window,
-        timestamp: timestamp.to_i * 1000 # to milliseconds
-      }
-
-      response = safe do
-        RestClient.post "#{BASE_URL}/api/v3/order/test",
-                        params_with_signature(params, api_secret),
-                        'X-MBX-APIKEY' => api_key
-      end
-
-      build_result response
+    def order_test(params = {})
+      params = map_params(params)
+      process_request(:post, "#{BASE_URL}/api/v3/order/test", params)
     end
 
-    def get_order(symbol, options = {})
-      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
-      timestamp = options.delete(:timestamp) || Time.now
-
-      params = {
-          symbol: symbol,
-          orderId: options.fetch(:order_id, nil),
-          origClientOrderId: options.fetch(:orig_client_order_id, nil),
-          recvWindow: recv_window,
-          timestamp: timestamp.to_i * 1000 # to milliseconds
-      }
-
-      response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/order",
-                       params: params_with_signature(params, api_secret),
-                       'X-MBX-APIKEY' => api_key
-      end
-
-      build_result response
+    def get_order(params = {})
+      params = map_params(params)
+      process_request(:get, "#{BASE_URL}/api/v3/order", params)
     end
 
-    def cancel_order(symbol, options = {})
-      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
-      timestamp = options.delete(:timestamp) || Time.now
-
-      params = {
-          symbol: symbol,
-          orderId: options.fetch(:order_id, nil),
-          origClientOrderId: options.fetch(:orig_client_order_id, nil),
-          newClientOrderId: options.fetch(:new_client_order_id, nil),
-          recvWindow: recv_window,
-          timestamp: timestamp.to_i * 1000 # to milliseconds
-      }
-
-      response = safe do
-        RestClient.delete "#{BASE_URL}/api/v3/order",
-                          params: params_with_signature(params, api_secret),
-                          'X-MBX-APIKEY' => api_key
-      end
-
-      build_result response
+    def cancel_order(params = {})
+      params = map_params(params)
+      process_request(:delete, "#{BASE_URL}/api/v3/order", params)
     end
 
-    def open_orders(symbol, options = {})
-      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
-      timestamp = options.delete(:timestamp) || Time.now
-
-      params = {
-          symbol: symbol,
-          recvWindow: recv_window,
-          timestamp: timestamp.to_i * 1000 # to milliseconds
-      }
-
-      response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/openOrders",
-                       params: params_with_signature(params, api_secret),
-                       'X-MBX-APIKEY' => api_key
-      end
-
-      build_result response
+    def open_orders(params = {})
+      params = map_params(params)
+      process_request(:get, "#{BASE_URL}/api/v3/openOrders", params)
     end
 
-    def all_orders(symbol, options = {})
-      recv_window = options.delete(:recv_window) || BinanceAPI.recv_window
-      timestamp = options.delete(:timestamp) || Time.now
-      limit = options.delete(:limit) || 500
-
-      params = {
-          symbol: symbol,
-          orderId: options.fetch(:order_id, nil),
-          limit: limit,
-          recvWindow: recv_window,
-          timestamp: timestamp.to_i * 1000 # to milliseconds
-      }
-
-      response = safe do
-        RestClient.get "#{BASE_URL}/api/v3/allOrders",
-                       params: params_with_signature(params, api_secret),
-                       'X-MBX-APIKEY' => api_key
-      end
-
-      build_result response
+    def all_orders(params = {})
+      params = map_params(params)
+      process_request(:get, "#{BASE_URL}/api/v3/allOrders", params)
     end
 
     def my_trades(symbol, options = {})

@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.binance.com/api/v3/order
+    body:
+      encoding: UTF-8
+      string: coin=MYCOIN&recvWindow=5000&timestamp=1601585522000&signature=c1d918912067f31aa2b8bd7c44c0845b5e53e49239059baf406b5af8d318bb5c
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZzz
+      Content-Length:
+      - '126'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 01 Oct 2020 20:52:02 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - adcb1aae-8837-4083-931a-6ed661a379e0
+      X-Mbx-Used-Weight:
+      - '3'
+      X-Mbx-Used-Weight-1m:
+      - '3'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 3746550ac2cf89851f01a575c7b680a6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR61-C2
+      X-Amz-Cf-Id:
+      - S1b9Y-IulvguLp37_uMrbRTNvccxviBsg_JpS3PAQfRrVxcbhDMNjw==
+    body:
+      encoding: UTF-8
+      string: '{"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}'
+  recorded_at: Thu, 01 Oct 2020 20:52:02 GMT
+recorded_with: VCR 6.0.0

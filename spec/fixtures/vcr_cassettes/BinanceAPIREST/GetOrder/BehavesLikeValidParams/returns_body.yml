@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.binance.com/api/v3/order?orderId=1817387327&recvWindow=5000&signature=3793da6f430c3d6ee625b85c65ca03da06711cfeccfa2a6daca44a7f3c0cd168&symbol=ETHUSDT&timestamp=1601584491000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
+      X-Mbx-Apikey:
+      - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Host:
+      - api.binance.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '266'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 01 Oct 2020 20:34:51 GMT
+      Server:
+      - nginx
+      X-Mbx-Uuid:
+      - 9a775a48-f093-431b-9c1b-b2ffbd85f008
+      X-Mbx-Used-Weight:
+      - '2'
+      X-Mbx-Used-Weight-1m:
+      - '2'
+      Content-Encoding:
+      - gzip
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - default-src 'self'
+      X-Content-Security-Policy:
+      - default-src 'self'
+      X-Webkit-Csp:
+      - default-src 'self'
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 f79355bad214d64e02ae8e84a86f4933.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LHR61-C2
+      X-Amz-Cf-Id:
+      - eDDfm3Dul8pdfCP_ndFBaUNJY_8rd8n706kOc-u7dEYk9Mtvznp5vw==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAA/21Q0U6DQBD8l3vGhrPAIW+mpYo91FqMxjcKG3IVOHK3ZyTGf5ejaB9k33ZmsjM7X0T3zUHWJCJxdvu8X2fEIVKVoJKSRDSkbBmy5SWbQC40WuKCOqSoBbT48KslxyrdvqXH1R2NNX/lyX2w9Nl6ONcpUcAgcBfuNKOHqHbYn2DvD4ZPKAxCOUMVpmlMnaP4gJ2RCCcJ9RYBC71JozFHowd4k3AeW3MUDSTtRqoxwk22sljf2SW9ftrG9l8tSrvvY87HG7J7nIs8QAdQ59RnxpoMbQUu9X3mhy69ChxiujJHyOYooV+kehdtRSJUBqY27FNjnf8cvn8ACllH7qcBAAA=
+  recorded_at: Thu, 01 Oct 2020 20:34:52 GMT
+recorded_with: VCR 6.0.0

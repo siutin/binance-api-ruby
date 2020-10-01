@@ -1,43 +1,47 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.binance.com/api/v3/account?recvWindow=5000&signature=eaac8dec00809281f99da5a4a39096a7ac52edabcdbcdd745b42083306ac7151&timestamp=1601463164000
+    method: post
+    uri: https://api.binance.com/api/v3/order/test
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: symbol=BTCUSDT&type=MARKET&side=SELL&quantity=10.0&recvWindow=5000&timestamp=1601479797000&signature=8e0e3608eb3a3daf07a499b35ac04922513c056a4c88e865848ff76d24a65d4c
     headers:
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (darwin19.3.0 x86_64) ruby/2.6.5p114
+      - rest-client/2.0.2 (darwin19.5.0 x86_64) ruby/2.6.5p114
       X-Mbx-Apikey:
       - b3gxC40YDY5UaGj4uxr5feKb5hM03aJQ8ke79sn3Kbi55IntSvVp3cqXajeTYZpk
+      Content-Length:
+      - '165'
+      Content-Type:
+      - application/x-www-form-urlencoded
       Host:
       - api.binance.com
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '63'
+      - '2'
       Connection:
       - keep-alive
       Date:
-      - Wed, 30 Sep 2020 10:52:45 GMT
+      - Wed, 30 Sep 2020 15:29:57 GMT
       Server:
       - nginx
       X-Mbx-Uuid:
-      - abd388d9-e996-4d9d-b4a8-65320749e1e7
+      - 517bd991-2d53-4a50-923d-e37fd6018f56
       X-Mbx-Used-Weight:
-      - '10'
+      - '2'
       X-Mbx-Used-Weight-1m:
-      - '10'
+      - '2'
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains
       X-Frame-Options:
@@ -58,16 +62,20 @@ http_interactions:
       - no-cache
       Expires:
       - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
       X-Cache:
-      - Error from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 ed03f18c47649fd55292e71a1aea7064.cloudfront.net (CloudFront)
+      - 1.1 1f0b2edf1d5c127c320be20441fdb063.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DUB2-C1
+      - LHR62-C4
       X-Amz-Cf-Id:
-      - JM6qSwuV1TBY8QAV1qWCG4F5EWHuIF04PXolePXTZdqAKBBC-AdMaA==
+      - Laz88Mg7FpeWnUp0nJMj_j9gH-lq7bisk8DzWhkUtfHbmSpLR-8RUQ==
     body:
       encoding: UTF-8
-      string: '{"code":-1022,"msg":"Signature for this request is not valid."}'
-  recorded_at: Wed, 30 Sep 2020 10:52:45 GMT
+      string: "{}"
+  recorded_at: Wed, 30 Sep 2020 15:29:57 GMT
 recorded_with: VCR 6.0.0
