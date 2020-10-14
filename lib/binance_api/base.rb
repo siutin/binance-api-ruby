@@ -40,6 +40,10 @@ module BinanceAPI
       params.merge(signature: signature)
     end
 
+    def params_without_signature(params)
+      params.reject { |_k, v| v.nil? }
+    end
+
     def process_request(method, url, params = {})
       response = make_request(method, url, params)
       validate_response(response)
@@ -47,7 +51,11 @@ module BinanceAPI
     end
 
     def make_request(method, url, params)
-      signed_params = params_with_signature(params, api_secret)
+      signed_params = if params.delete(:without_auth)
+                        params_without_signature(params)
+                      else
+                        params_with_signature(params, api_secret)
+                      end
       headers = { 'X-MBX-APIKEY' => api_key }
       execute_params = { method: method, url: url, proxy: proxy || params.delete(:proxy) }
       safe do

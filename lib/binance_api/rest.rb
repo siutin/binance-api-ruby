@@ -14,6 +14,11 @@ module BinanceAPI
       process_request(:get, "#{BASE_URL}/api/v3/account", params)
     end
 
+    def ticker_price(params = {})
+      req_params = { symbol: params[:symbol], without_auth: true }
+      process_request(:get, "#{BASE_URL}/api/v3/ticker/price", req_params)
+    end
+
     def ping
       response = safe { RestClient.get("#{BASE_URL}/api/v1/ping") }
       build_result response
@@ -76,11 +81,6 @@ module BinanceAPI
 
     def ticker_24hr(symbol)
       response = safe { RestClient.get("#{BASE_URL}/api/v1/ticker/24hr", params: { symbol: symbol }) }
-      build_result response
-    end
-
-    def ticker_price(symbol)
-      response = safe { RestClient.get("#{BASE_URL}/api/v3/ticker/price", params: { symbol: symbol }) }
       build_result response
     end
 

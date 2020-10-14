@@ -5,6 +5,58 @@ require 'spec_helper'
 RSpec.describe BinanceAPI::REST, :vcr do
   subject(:subject) { BinanceAPI::REST.new }
 
+  describe '.ticker_price' do
+    let(:request) { subject.ticker_price(symbol: symbol) }
+
+    context 'when symbol param is present' do
+      let(:symbol) { 'BTCUSDT' }
+
+      it 'response success' do
+        expect(request).to be_success
+      end
+
+      it 'returns valid hash' do
+        expect(request.value).to eq({ symbol: 'BTCUSDT', price: '11425.48000000' })
+      end
+    end
+
+    context 'when symbol param is not present' do
+      let(:symbol) { nil }
+
+      it 'response success' do
+        expect(request).to be_success
+      end
+
+      it 'returns array' do
+        expect(request.value).to be_a(Array)
+      end
+
+      it 'returns valid hashes in array' do
+        expect(request.value.first).to eq({ symbol: 'ETHBTC', price: '0.03347600' })
+      end
+    end
+
+    context 'when invalid params' do
+      let(:symbol) { 'XXXYYY' }
+
+      it 'throws BinanceAPI::RequestError' do
+        expect { request }.to raise_error(BinanceAPI::RequestError)
+      end
+
+      it 'throws exception with error message' do
+        request
+      rescue => e
+        expect(e.message).to include('Invalid symbol.')
+      end
+
+      it 'throws exception with status code' do
+        request
+      rescue => e
+        expect(e.status).to eq(400)
+      end
+    end
+  end
+
   describe '.ping' do
     it_behaves_like 'valid params', :ping, {}, {}
   end
