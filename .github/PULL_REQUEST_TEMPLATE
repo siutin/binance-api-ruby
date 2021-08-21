@@ -1,0 +1,23 @@
+## Motivation and Context
+<!--- Why is this change required? What problem does it solve? -->
+<!--- Add here link to Jira, but let this not be the only content in this section -->
+**[JIRA ticket](https://banktothefuture.atlassian.net/browse/XX-1234)**
+
+## Description
+<!--- Describe what you have done and why have you done it this way -->
+
+## Screenshots (if appropriate):
+
+## How Has This Been Tested?
+<!--- Please describe in detail how you tested your changes. -->
+<!--- Include details of your testing environment, and the tests you ran to -->
+<!--- see how your change affects other areas of the code, etc. -->
+
+## Checklist:
+<!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
+<!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+- [ ] I have added tests to cover my changes.
+- [ ] I have added feature flags to hide new changes on production
+- [ ] I have tested if data is not visible by other user (through modified API call, or URL change)
+- [ ] I have tested what happens if I resubmit form or API call few times
+- [ ] I have tested inputs against tricky strings like `<script>alert('XSS')</script>` or emojis 🐛😺
