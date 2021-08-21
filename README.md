@@ -1,4 +1,6 @@
 # binance-api-ruby
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsiutin%2Fbinance-api-ruby.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsiutin%2Fbinance-api-ruby?ref=badge_shield)
+
 
 A wrapper written in ruby for Binance API
 
@@ -121,6 +123,9 @@ WebSocket Stream | BinanceAPI::Stream
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsiutin%2Fbinance-api-ruby.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsiutin%2Fbinance-api-ruby?ref=badge_large)
 
 ## Donations
 
