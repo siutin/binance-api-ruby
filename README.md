@@ -16,8 +16,20 @@ Or add it to your Gemfile:
 gem 'binance_api'
 ```
 
+## Configuration
+
+You may want to test the API behaviour for some development/testing purposes. Then you should add following configuration:
+```
+# config/initializers/binance.rb
+
+BinanceAPI.configure do |config|
+  config.testnet_mode = true
+end
+```
+For production, you can skip this section. `testnet_mode` by default is set to `false`
+
 ## Examples
-  
+
 ### using a REST Client
 ```
 require 'binance_api'
@@ -40,13 +52,13 @@ true
 ## get last 5 BNB/BTC orders
 
 ```
- # fill in your profile 
+ # fill in your profile
  client.api_key = 'YOUR_API_KEY'
- client.api_secret = 'YOUR_API_SECRET' 
- 
+ client.api_secret = 'YOUR_API_SECRET'
+
  >> client.all_orders('BNBBTC', limit: 10).value
  [{:symbol=>"BNBBTC", :orderId=>25456733, :clientOrderId=>"ios_a323664543576765623787ybdfsdcax1231d", :price=>"0.00128567", :origQty=>"12.1000000", ...}, {...]
- 
+
 ```
 
 ### using a Stream client
@@ -82,9 +94,9 @@ You can use proxy parameter:
 
 API | Class
 ------ | --------
-Rest API | BinanceAPI::REST 
+Rest API | BinanceAPI::REST
 Withdrawal API | BinanceAPI::WAPI
-WebSocket Stream | BinanceAPI::Stream 
+WebSocket Stream | BinanceAPI::Stream
 
 ## REST Client Calls
 
@@ -110,7 +122,7 @@ WebSocket Stream | BinanceAPI::Stream
     #start_user_data_stream
     #keep_alive_user_data_stream
     #close_user_data_stream
-    
+
 ## Withdrawal Client Calls
     #withdraw
     #deposit_history

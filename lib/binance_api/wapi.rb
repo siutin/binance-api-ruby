@@ -21,7 +21,7 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/wapi/v3/withdraw.html",
+        RestClient.get "#{base_url}/wapi/v3/withdraw.html",
                        params: params_with_signature(params, api_secret),
                        'X-MBX-APIKEY' => api_key
       end
@@ -43,7 +43,7 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/wapi/v3/depositHistory.html",
+        RestClient.get "#{base_url}/wapi/v3/depositHistory.html",
                        params: params_with_signature(params, api_secret),
                        'X-MBX-APIKEY' => api_key
       end
@@ -65,7 +65,7 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/wapi/v3/withdrawHistory.html",
+        RestClient.get "#{base_url}/wapi/v3/withdrawHistory.html",
                        params: params_with_signature(params, api_secret),
                        'X-MBX-APIKEY' => api_key
       end
@@ -85,7 +85,7 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/wapi/v3/depositAddress.html",
+        RestClient.get "#{base_url}/wapi/v3/depositAddress.html",
                        params: params_with_signature(params, api_secret),
                        'X-MBX-APIKEY' => api_key
       end
@@ -104,7 +104,7 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/wapi/v3/withdrawFee.html",
+        RestClient.get "#{base_url}/wapi/v3/withdrawFee.html",
                        params: params_with_signature(params, api_secret),
                        'X-MBX-APIKEY' => api_key
       end
@@ -122,7 +122,7 @@ module BinanceAPI
       }
 
       response = safe do
-        RestClient.get "#{BASE_URL}/wapi/v3/accountStatus.html",
+        RestClient.get "#{base_url}/wapi/v3/accountStatus.html",
                        params: params_with_signature(params, api_secret),
                        'X-MBX-APIKEY' => api_key
       end
@@ -131,7 +131,7 @@ module BinanceAPI
     end
 
     def system_status
-      response = safe { RestClient.get("#{BASE_URL}/wapi/v3/systemStatus.html") }
+      response = safe { RestClient.get("#{base_url}/wapi/v3/systemStatus.html") }
 
       json = JSON.parse(response.body, symbolize_names: true)
       BinanceAPI::Result.new(json, response.code == 200)

@@ -1,6 +1,7 @@
 # frozen_string_literal: false
 
 require 'binance_api/version'
+require 'binance_api/configuration'
 require 'binance_api/request_error'
 require 'binance_api/rest'
 require 'binance_api/wapi'
@@ -11,6 +12,8 @@ require 'yaml'
 
 # BinanceAPI client builders
 module BinanceAPI
+  extend Configuration
+
   class << self
     def rest
       @rest ||= BinanceAPI::REST.new

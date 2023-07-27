@@ -9,7 +9,8 @@ require 'binance_api/result'
 module BinanceAPI
   # Base API client
   class Base
-    BASE_URL = 'https://api.binance.com'.freeze
+    API_BASE_URL = 'https://api.binance.com'.freeze
+    TESTNET_API_URL = 'https://testnet.binance.vision'.freeze
 
     def initialize(options: {})
       @api_key = options.fetch(:api_key, nil)
@@ -29,6 +30,12 @@ module BinanceAPI
 
     def proxy
       @proxy || BinanceAPI.proxy
+    end
+
+    def base_url
+      return TESTNET_API_URL if BinanceAPI.configuration.testnet_mode
+
+      API_BASE_URL
     end
 
     protected
